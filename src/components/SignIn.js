@@ -3,7 +3,6 @@ export const SignIn = () => {
     const showSignIn = `
     <div class"conteinerGeneral">
     <div class="SingUpBox">
-        <p class="title">¡Bienvenidx!</p>
         <form id="formLogIn" class="formLogIn">
         <div class="form-control">
         <input id="email" type="email" placeholder="Correo electrónico">
@@ -17,7 +16,7 @@ export const SignIn = () => {
         `;
 
     const SignInDiv = document.createElement('div');
-    SignInDiv.innerHTML = showSignIn + `<a href= '#register' >Register</a>`
+    SignInDiv.innerHTML = showSignIn + `<label class="formText question">¿No tienes cuenta?<a href="#register">Regístrate</a></label>`
 
     return SignInDiv;
     };

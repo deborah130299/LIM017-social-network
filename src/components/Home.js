@@ -11,7 +11,7 @@ export const Home = () => {
     </div>
     ;
     <img class= 'imgWelcome'
-    src= './img/travel.png' alt= 'imgWelcome'>
+    src= './img/destinos.png' alt= 'imgWelcome'>
     `
 
   const HomeDiv = document.createElement('div')

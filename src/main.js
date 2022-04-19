@@ -8,8 +8,8 @@ import { Register } from './components/Register.js';
 const rootDiv = document.getElementById('root');
 
 const homeContent = '<h1>Destinos + </h1>';
-const signInContent = '<h1>Bienvenidx</h1>';
-const registerContent = '<h1>Regístrate</h1>';
+const signInContent = '<h1>Únete a nuestra comunidad</h1>';
+const registerContent = '<h1>Bienvenidx</h1>';
 
 // llave -> valor
 // '#home' -> homeContent
