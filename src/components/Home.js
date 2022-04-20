@@ -1,22 +1,36 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-/* eslint-disable eol-last */
+import { onNavigate } from './main.js'
 
 export const Home = () => {
+  const HomeElement = document.createElement('section');
+  HomeElement.setAttribute('class', 'containerView');
+  const HomeDiv =`
+  <div id="fondo">
+  <img class="fondo" src="./img/fondo.jpeg" alt="destinos+"/>
+  <form id="Welcome" class="WelcomeForm">
 
-    const viewWelcome = `
-    <div class = 'messageWelcome'>
-    <h1>Destinos +</h1>
-    <p>Somos una comunidad de viajerxs</p>
-    </div>
-    ;
-    <img class= 'imgWelcome'
-    src= './img/destinos.png' alt= 'imgWelcome'>
-    `
+  <div class = 'title'>
+  <p> Bienvenido</p>
+  </div>
+  <section class="welcome-wrapper">
+  <div  class = 'text'>
+  <a>Somos una comunidad de viajer@s conectados alrededor del mundo, sé parte de esta gran familia</a>
 
-  const HomeDiv = document.createElement('div')
-  HomeDiv.setAttribute('class', 'messageWelcome')
-  HomeDiv.innerHTML = viewWelcome + `<a href= '#signIn' >Únete a nuestra comunidad</a>`
+  </div>
+  <button class="btnUnete">Crea tu cuenta</button>
+  <button class="btnIniciar">Iniciar Sesion</button>
+</section>
+  </form>
+  </div>
+  `;
+  HomeElement.innerHTML = HomeDiv;
+  HomeElement.querySelector('.btnUnete').addEventListener('click', () => {
+    onNavigate('/Register');
+  });
 
-  return HomeDiv
+  HomeElement.querySelector('.btnIniciar').addEventListener('click', () => {
+    onNavigate('/Login');
+  });
+
+  return HomeElement;
+
 };
