@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
 }
-
+/*
 .fondo{
     width:100%;
     height:90%;
@@ -14,10 +14,27 @@
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+}*/
+.logo-destinos2{
+    width:20%;
+    height:15%;
+    position: absolute;
+    padding: 5px;
+    margin-left: 12em;
+    margin-top: 6em;
+
+}
+
+.logo-destinos1{
+    width:37%;
+    height:15%;
+    position: relative;
+    margin-left: 10em;
+    margin-top: 3em;
 }
 
 form {
-    position: absolute;
+    position: relative;
     background: rgba(255,227,179,255);
     padding: 2em 1em;
     font-family: helvetica, sans-serif;
@@ -27,6 +44,7 @@ form {
     top: 30%;
     left: 57%;
     overflow-x:auto;
+    margin-top: -27em;
     }
 
 button{
@@ -49,6 +67,9 @@ p{
     }
 
 .formBox{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
     margin-top: 5px;
     height: 30px;
     min-width: 340px;

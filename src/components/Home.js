@@ -5,7 +5,8 @@ export const Home = () => {
   HomeElement.setAttribute('class', 'containerView');
   const HomeDiv =`
   <div id="fondo">
-  <img class="fondo" src="./img/fondo.jpeg" alt="destinos+"/>
+  <img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
+  <img class="logo-destinos2" src="./img/Destinos-logo.png" alt="logo1"/>
   <form id="Welcome" class="WelcomeForm">
 
   <div class = 'title'>

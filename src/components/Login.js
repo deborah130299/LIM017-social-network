@@ -1,11 +1,13 @@
 import { onNavigate } from "./main.js";
+import { signInApp } from "../lib/authFunctions.js";
 
 export const Login = () => {
     const LoginElement = document.createElement("section");
     LoginElement.setAttribute("class", "containerView");
     const LoginDiv = `
     <div id="fondo">
-    <img class="fondo" src="./img/fondo.jpeg" alt="destinos+"/>
+    <img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
+  <img class="logo-destinos2" src="./img/Destinos-logo.png" alt="logo1"/>
     <form id="login" class="loginForm">
     <div class"conteinerGeneral">
     <div class="SingUpBox">
@@ -28,7 +30,12 @@ export const Login = () => {
         `;
 
     LoginElement.innerHTML = LoginDiv;
-
+    const buttonLogin = LoginElement.querySelector('#btnSignIn');
+    const email = LoginElement.querySelector('#email').value;
+  const password = LoginElement.querySelector('#password').value;
+  buttonLogin.addEventListener ( 'click', () => {
+    signInApp ( email, password );
+  });
     LoginElement.querySelector(".btnVolver").addEventListener("click", () => {
     onNavigate("/");
     });
