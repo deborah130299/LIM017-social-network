@@ -1,4 +1,3 @@
-
 import { onNavigate } from './main.js'
 
 export const Home = () => {
@@ -6,16 +5,17 @@ export const Home = () => {
   HomeElement.setAttribute('class', 'containerView');
   const HomeDiv =`
   <div id="fondo">
-  <img class="fondo" src="./img/fondo.jpeg" alt="destinos+"/>
+  <img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
+  <img class="logo-destinos2" src="./img/Destinos-logo.png" alt="logo1"/>
   <form id="Welcome" class="WelcomeForm">
-  
+
   <div class = 'title'>
   <p> Bienvenido</p>
   </div>
   <section class="welcome-wrapper">
   <div  class = 'text'>
   <a>Somos una comunidad de viajer@s conectados alrededor del mundo, sé parte de esta gran familia</a>
- 
+
   </div>
   <button class="btnUnete">Crea tu cuenta</button>
   <button class="btnIniciar">Iniciar Sesion</button>
@@ -33,6 +33,5 @@ export const Home = () => {
   });
 
   return HomeElement;
-  
-};
 
+};
