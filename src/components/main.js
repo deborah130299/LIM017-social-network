@@ -1,7 +1,7 @@
 import { Home } from "./Home.js";
 import { Register } from "./Register.js";
 import { Login } from "./Login.js";
-import { Post } from "./Post.js"
+import { Post } from "./Post.js" ;
 
 const rootDiv = document.getElementById("root");
 
@@ -9,8 +9,8 @@ const routes = {
     "/": Home,
     "/Register": Register,
     "/Login": Login,
-    "/Post": Post,
-};
+     "/Post": Post, 
+    };
 
 export const onNavigate = (pathname) => {
     window.history.pushState({}, pathname, window.location.origin + pathname);
@@ -31,4 +31,5 @@ window.onpopstate = () => {
     rootDiv.appendChild(routes[window.location.pathname]());
 };
 
-rootDiv.appendChild(component());
+
+

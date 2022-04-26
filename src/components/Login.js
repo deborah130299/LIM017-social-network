@@ -20,7 +20,7 @@ export const Login = () => {
             <input minlength="5" id="password" type="password"
             placeholder="Contraseña">
         </div>
-        <button id="btnSignIn" class="button">Inicia sesión</button>
+        <button class="btnSignIn" class="button">Inicia sesión</button>
 
 
         <button class="btnVolver">Regresar al Home</button>
@@ -30,15 +30,18 @@ export const Login = () => {
         `;
 
     LoginElement.innerHTML = LoginDiv;
-    const buttonLogin = LoginElement.querySelector('#btnSignIn');
+  /*   const buttonLogin = LoginElement.querySelector('#btnSignIn');
     const email = LoginElement.querySelector('#email').value;
   const password = LoginElement.querySelector('#password').value;
   buttonLogin.addEventListener ( 'click', () => {
-    signInApp ( email, password );
-  });
+    signInApp ( email, password );  
+  }); */ 
     LoginElement.querySelector(".btnVolver").addEventListener("click", () => {
     onNavigate("/");
     });
 
+  
     return LoginElement;
 };
+
+
