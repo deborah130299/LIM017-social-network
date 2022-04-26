@@ -11,7 +11,7 @@ export const Register = () => {
     <form id="signUp"  class="signUpForm">
     <p>Registrarse</p>
       <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="nombre de usuario" pattern="^([a-zA-Z0-9-_\\.]+)$" title="Solo puede contener letras, puntos y guiones." required/>
-      <span id="user" class="form-error-none">Solo puede contener letras, puntos y guiones.</span>
+      <span id="user" class="form-error-none">Sólo puede contener letras, puntos y guiones.</span>
       <input id="signUpEmail" class="formBox" name="email" type="email" placeholder="correo@example.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@example.com" required/>
       <span id="email" class="form-error-none">Ejemplo: correo@example.com</span>
       <label class="passwordContainer">
