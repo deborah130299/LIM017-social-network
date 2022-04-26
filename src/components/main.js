@@ -1,16 +1,22 @@
 import { Home } from "./Home.js";
 import { Register } from "./Register.js";
 import { Login } from "./Login.js";
-import { Post } from "./Post.js" ;
-
+//import { cerrarSesion, menuPuntosVerticales } from '../components/headerWall.js';
+/*import {
+    wall,
+    wallUser,
+    wallEditUser,
+    sectionCategory,
+} from "./wall.js"
+*/
 const rootDiv = document.getElementById("root");
 
 const routes = {
     "/": Home,
     "/Register": Register,
     "/Login": Login,
-     "/Post": Post, 
-    };
+
+};
 
 export const onNavigate = (pathname) => {
     window.history.pushState({}, pathname, window.location.origin + pathname);
@@ -24,6 +30,7 @@ export const onNavigate = (pathname) => {
 
 const component = routes[window.location.pathname];
 
+
 window.onpopstate = () => {
     while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
@@ -32,4 +39,4 @@ window.onpopstate = () => {
 };
 
 
-
+rootDiv.appendChild(component());

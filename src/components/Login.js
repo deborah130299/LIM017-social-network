@@ -7,7 +7,7 @@ export const Login = () => {
     const LoginDiv = `
     <div id="fondo">
     <img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
-  <img class="logo-destinos2" src="./img/Destinos-logo.png" alt="logo1"/>
+    <img class="logo-destinos2" src="./img/Destinos-logo.png" alt="logo1"/>
     <form id="login" class="loginForm">
     <div class"conteinerGeneral">
     <div class="SingUpBox">
