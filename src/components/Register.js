@@ -10,10 +10,9 @@ export const Register = () => {
   <img class="logo-destinos2" src="./img/Destinos-logo.png" alt="logo1"/>
     <form id="signUp"  class="signUpForm">
     <p>Registrarse</p>
-      <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="nombre de usuario" pattern="^([a-zA-Z0-9-_\\.]+)$" title="Solo puede contener letras, puntos y guiones." required/>
-      <span id="user" class="form-error-none">Sólo puede contener letras, puntos y guiones.</span>
+      <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="nombre de usuario")$" title="Solo puede contener letras y números." required/>
+      <span id="user" class="form-error-none">Sólo puede contener letras y números.</span>
       <input id="signUpEmail" class="formBox" name="email" type="email" placeholder="correo@example.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@example.com" required/>
-      <span id="email" class="form-error-none">Ejemplo: correo@example.com</span>
       <label class="passwordContainer">
         <input id="signUpPassword" class="formBox" name="password" type="password" placeholder="contraseña" minlength="8" maxlength="16" title="La contraseña debe tener al menos entre 8 y 16 caracteres. 
       </label>
@@ -33,9 +32,11 @@ export const Register = () => {
 
   RegisterElement.innerHTML = RegisterDiv;
   const buttonRegister = RegisterElement.querySelector('#signUpButton');
-  const email = RegisterElement.querySelector('#signUpEmail').value;
-  const password = RegisterElement.querySelector('#signUpPassword').value;
-  buttonRegister.addEventListener ( 'click', () => {
+  buttonRegister.addEventListener ( 'click', (e) => {
+    e.preventDefault ();
+    const email = RegisterElement.querySelector('#signUpEmail').value;
+    const password = RegisterElement.querySelector('#signUpPassword').value;
+    console.log( email, password );
     registerWithEmail ( email, password );
   })
   RegisterElement.querySelector(".btnVolver").addEventListener("click", () => {
