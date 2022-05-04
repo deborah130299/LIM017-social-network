@@ -40,3 +40,13 @@ window.onpopstate = () => {
 
 
 rootDiv.appendChild(component());
+
+export function showLogIn() {
+    // boton que permite iniciar sesion
+    const logInBtn = document.getElementById('#btnSignIn');
+    logInBtn.addEventListener('click', () => {
+      const email = document.getElementById('user').value;
+      const password = document.getElementById('password').value;
+      Login(email, password);
+    });
+}
