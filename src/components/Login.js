@@ -35,7 +35,20 @@ export const Login = () => {
     e.preventDefault();
     const email = LoginElement.querySelector('#email').value;
     const password = LoginElement.querySelector('#password').value;
-    signInApp ( email, password );
+    signInApp ( email, password )
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user);
+      onNavigate('/Post');
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+    });
   });
     LoginElement.querySelector(".btnVolver").addEventListener("click", () => {
     onNavigate("/");
