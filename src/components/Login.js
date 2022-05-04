@@ -31,9 +31,10 @@ export const Login = () => {
 
     LoginElement.innerHTML = LoginDiv;
     const buttonLogin = LoginElement.querySelector('#btnSignIn');
+  buttonLogin.addEventListener ( 'click', (e) => {
+    e.preventDefault();
     const email = LoginElement.querySelector('#email').value;
-  const password = LoginElement.querySelector('#password').value;
-  buttonLogin.addEventListener ( 'click', () => {
+    const password = LoginElement.querySelector('#password').value;
     signInApp ( email, password );
   });
     LoginElement.querySelector(".btnVolver").addEventListener("click", () => {
