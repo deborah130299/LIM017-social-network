@@ -1,13 +1,14 @@
-import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
-import { validateSessionStorage } from "./validaciones.js";
+//import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
+
 
 // Renderizando el header
-export const contenidoHeader = () => {
-    const userData = validateSessionStorage();
-    const headerMuro = `
+export const Post = () => {
+    const PostElement = document.createElement('section');
+    PostElement.setAttribute('class', 'containerView');
+    const containerPost = `
         <div class="enlacePerfil">
-            <a href="#/artperfil"><img src="${userData.imgUsuario}" class="imagenUsuario"></a>
-            <p class="nombreUsuario"><a id="perfil" href="#/artperfil">${userData.username}</a></p>
+        <a href="#/artperfil"><img class="imagenUsuario"></a>
+            <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
         </div>
         <img src=".img/destinos-logo.png" class="titulo-header">
         <div class="puntosVerticales">
@@ -19,13 +20,19 @@ export const contenidoHeader = () => {
             <li><a id="cerrar-sesion"><img src="./img/cerrar-sesion.png"><span>Cerrar Sesión</span></a></li>
             </ul>
         </div>
-        `;
-    return headerMuro;
+        <form id="createPost">
+        <textarea id="post" placeholder="Descripcion"></textarea>
+        <button id="publicar">Publicar</button>
+        </form>
+        `
+        ;
+        PostElement.innerHTML = containerPost;
+    return PostElement;
 };
 
 // Funcion de boton cerrar sesion, limpiando el sessionStorage
 // redirige a inicio
-export const cerrarSesion = () => {
+/*export const cerrarSesion = () => {
     const btnCerrarSesion = document.getElementById("cerrar-sesion");
     btnCerrarSesion.addEventListener("click", () => {
     cierreActividadUsuario()
@@ -38,7 +45,7 @@ export const cerrarSesion = () => {
         console.log(error);
         });
     });
-};
+};*/
 
 // Funcionalidad de menu puntos verticales
 export const menuPuntosVerticales = () => {
@@ -53,3 +60,5 @@ export const menuPuntosVerticales = () => {
     desplegable.classList.toggle("active");
     });
 };
+
+

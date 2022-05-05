@@ -1,5 +1,5 @@
 import { onNavigate } from "./main.js";
-/* import { signInApp } from "../lib/authFunctions.js"; */
+ import { signInApp } from "../lib/authFunctions.js"; 
 
 export const Login = () => {
     const LoginElement = document.createElement("section");
@@ -30,6 +30,26 @@ export const Login = () => {
         `;
 
     LoginElement.innerHTML = LoginDiv;
+    const buttonLogin = LoginElement.querySelector('#btnSignIn');
+  buttonLogin.addEventListener ( 'click', (e) => {
+    e.preventDefault();
+    const email = LoginElement.querySelector('#email').value;
+    const password = LoginElement.querySelector('#password').value;
+    signInApp ( email, password )
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user);
+      onNavigate('/Post');
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+    });
+  });
     LoginElement.querySelector(".btnVolver").addEventListener("click", () => {
     onNavigate("/");
     });
