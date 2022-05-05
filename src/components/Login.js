@@ -1,5 +1,5 @@
 import { onNavigate } from "./main.js";
- import { signInApp } from "../lib/authFunctions.js"; 
+import { signInApp } from "../lib/authFunctions.js";
 
 export const Login = () => {
     const LoginElement = document.createElement("section");
@@ -20,9 +20,7 @@ export const Login = () => {
             <input minlength="5" id="password" type="password"
             placeholder="Contraseña">
         </div>
-        <button class="btnSignIn" class="button">Inicia sesión</button>
-
-
+        <button id="btnSignIn" class="button">Inicia sesión</button>
         <button class="btnVolver">Regresar al Home</button>
         </form>
         </form>
@@ -54,8 +52,5 @@ export const Login = () => {
     onNavigate("/");
     });
 
-  
     return LoginElement;
 };
-
-
