@@ -3,12 +3,13 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
-//import { app } from './config';
+
+import { app } from './firebaseConfig.js';
 
 //const auth = getAuth(app);
 
 export const registerWithEmail = (email, password) => {
-  const auth = getAuth();
+  const auth = getAuth(app);
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in

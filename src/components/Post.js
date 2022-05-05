@@ -1,5 +1,6 @@
 //import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
-
+import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+import { db } from "../lib/firebaseConfig.js";
 
 // Renderizando el header
 export const Post = () => {
@@ -10,7 +11,7 @@ export const Post = () => {
         <a href="#/artperfil"><img class="imagenUsuario"></a>
             <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
         </div>
-        <img src=".img/destinos-logo.png" class="titulo-header">
+        <img src="./img/destinos-logo.png" class="titulo-header">
         <div class="puntosVerticales">
         <figure></figure>
             <figure class="middle"></figure>
@@ -27,6 +28,14 @@ export const Post = () => {
         `
         ;
         PostElement.innerHTML = containerPost;
+        const unsubscribe = onSnapshot(
+            collection(db, "Posts"),
+            (snapshot) => {
+              //
+            },
+            (error) => {
+              // ...
+            });
     return PostElement;
 };
 
