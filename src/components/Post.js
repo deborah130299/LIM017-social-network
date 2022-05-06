@@ -1,5 +1,5 @@
 //import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
-import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+import { collection, query, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
 import { db } from "../lib/firebaseConfig.js";
 
 // Renderizando el header
@@ -28,14 +28,14 @@ export const Post = () => {
         `
         ;
         PostElement.innerHTML = containerPost;
-        const unsubscribe = onSnapshot(
-            collection(db, "Posts"),
-            (snapshot) => {
-              //
-            },
-            (error) => {
-              // ...
-            });
+        const q = query(collection(db, "Posts"));
+        onSnapshot(q, (querySnapshot) => {
+        const Posts = [];
+        querySnapshot.forEach((doc) => {
+        Posts.push(doc.data().name);
+        });
+        console.log( Posts.join(", "));
+        });
     return PostElement;
 };
 
