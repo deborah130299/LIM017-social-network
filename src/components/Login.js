@@ -1,4 +1,4 @@
-import { onNavigate } from "./main.js";
+import { onNavigate } from "../main.js";
 import { signInApp } from "../lib/authFunctions.js";
 
 export const Login = () => {

@@ -29,4 +29,5 @@ export const signInApp = (email, password) => {
   const auth = getAuth();
 
 return signInWithEmailAndPassword(auth, email, password);
+
 };

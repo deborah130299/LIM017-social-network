@@ -1,6 +1,5 @@
 //import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
-import { collection, query, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
-import { db } from "../lib/firebaseConfig.js";
+import { doc, setDoc, db } from "../lib/firebaseConfig.js";
 
 // Renderizando el header
 export const Post = () => {
@@ -12,62 +11,29 @@ export const Post = () => {
             <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
         </div>
         <img src="./img/destinos-logo.png" class="titulo-header">
-        <div class="puntosVerticales">
-        <figure></figure>
-            <figure class="middle"></figure>
-            <p class="equis"></p>
-            <figure></figure>
+        <div class="cerrar-post">
             <ul class="desplegable">
-            <li><a id="cerrar-sesion"><img src="./img/cerrar-sesion.png"><span>Cerrar Sesión</span></a></li>
+            <li><a id="cerrar-sesion"><img src="./img/cerrar-sesion.png" class="cerrar-sesion"></a></li></span></a></li>
             </ul>
         </div>
         <form id="createPost">
-        <textarea id="post" placeholder="Descripcion"></textarea>
-        <button id="publicar">Publicar</button>
+        <textarea id="post-text" rows="5" placeholder="¿Qué quieres compartir?"></textarea>
+        <button id="btn-publicar">Publicar</button>
         </form>
         `
         ;
         PostElement.innerHTML = containerPost;
-        const q = query(collection(db, "Posts"));
-        onSnapshot(q, (querySnapshot) => {
-        const Posts = [];
-        querySnapshot.forEach((doc) => {
-        Posts.push(doc.data().name);
-        });
-        console.log( Posts.join(", "));
-        });
-    return PostElement;
-};
 
-// Funcion de boton cerrar sesion, limpiando el sessionStorage
-// redirige a inicio
-/*export const cerrarSesion = () => {
-    const btnCerrarSesion = document.getElementById("cerrar-sesion");
-    btnCerrarSesion.addEventListener("click", () => {
-    cierreActividadUsuario()
-        .then(() => {
-        sessionStorage.clear();
-        window.location.hash = "#/home";
-        })
-        .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error);
-        });
-    });
-};*/
-
-// Funcionalidad de menu puntos verticales
-export const menuPuntosVerticales = () => {
-    const puntosVerticales = document.querySelector(".puntosVerticales");
-    const middle = document.querySelector(".middle");
-    const equis = document.querySelector(".equis");
-    const desplegable = document.querySelector(".desplegable");
-
-    puntosVerticales.addEventListener("click", () => {
-    middle.classList.toggle("active");
-    equis.classList.toggle("active");
-    desplegable.classList.toggle("active");
-    });
+        var docData = {
+            Name: "Cynthia F",
+            Country : "Perú",
+            Text: "Esta es una prueba marciana",
+            Date: new Date("May 10, 2022"),
+        };
+        setDoc(doc(db, "Posts", "Hola"), docData)
+        .then(() => console.log('escribi esta cosa'))
+        .catch(() => console.log('no escribi nimichi'));
+        return PostElement;
 };
 
 
