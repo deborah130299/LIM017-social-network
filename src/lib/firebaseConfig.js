@@ -21,7 +21,9 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
-export const savePost = (description) => {
+export const savePosts = (description) => {
   addDoc(collection(db, "Posts"), {description:description})
 }
+
+export const getPosts = () => console.log('posts list');
 

@@ -1,5 +1,5 @@
 //import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
-import { savePost } from "../lib/firebaseConfig.js";
+import { savePosts, getPosts } from "../lib/firebaseConfig.js";
 
 // Renderizando el header
 export const Post = () => {
@@ -24,6 +24,7 @@ export const Post = () => {
     PostElement.innerHTML = containerPost;
 
 window.addEventListener('DOMContentLoaded',() => {
+    getPosts();
 })
 
 const createPost  = PostElement.querySelector("#create-Post");
@@ -32,9 +33,10 @@ createPost.addEventListener('submit', (e) => {
 
     const description = document.getElementById('post-text');
 
-    savePost(description.value)
-
+    savePosts(description.value)
 })
+
+
 
 
 
