@@ -6,22 +6,22 @@ export const Register = () => {
   RegisterElement.setAttribute("class", "containerView");
   const RegisterDiv = `
   <div id="fondo">
+  <img class="logo-destinos0" src="./img/Destinos-logo.png" alt="logo0"/>
   <img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
-  <img class="logo-destinos2" src="./img/Destinos-logo.png" alt="logo1"/>
-    <form id="signUp"  class="signUpForm">
+    <form id="signUpForm"  class="signUpForm">
     <p>Registrarse</p>
-      <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="nombre de usuario")$" title="Solo puede contener letras y números." required/>
+      <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="Nombre de usuario")$" title="Solo puede contener letras y números." required/>
       <span id="user" class="form-error-none">Sólo puede contener letras y números.</span>
       <input id="signUpEmail" class="formBox" name="email" type="email" placeholder="correo@example.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@example.com" required/>
       <label class="passwordContainer">
-        <input id="signUpPassword" class="formBox" name="password" type="password" placeholder="contraseña" minlength="8" maxlength="16" title="La contraseña debe tener al menos entre 8 y 16 caracteres. 
+        <input id="signUpPassword" class="formBox" name="password" type="password" placeholder="Contraseña" minlength="8" maxlength="16" title="La contraseña debe tener al menos entre 8 y 16 caracteres. 
       </label>
       <span id="password" class="form-error-none">La contraseña debe tener al menos entre 8 y 16 caracteres.</span>
       <div class="checkbox">
         <label class="container-checkBox">
-          <input type="checkbox" name="term" title="Debe aceptar términos y condiciones" required/><span class="checkmark"></span>
+          <input class="form-error-none" type="checkbox" name="term" title="Debe aceptar términos y condiciones" required/><span class="checkmark"></span>
           </label>
-        <label class="formText">Acepto términos y condiciones</label>
+        <label class="form-error none">Acepto términos y condiciones</label>
       </div>
       <span id="term" class="form-error none"></span>
       <button id="signUpButton" class="formButton">Registrarte</button>

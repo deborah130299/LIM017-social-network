@@ -10,7 +10,7 @@ export const Post = () => {
         <a href="#/artperfil"><img class="imagenUsuario"></a>
             <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
         </div>
-        <img src="./img/destinos-logo.png" class="titulo-header">
+        <img src="./img/destinos-logo.png" class="logo-destinos0">
         <div class="cerrar-post">
             <ul class="desplegable">
             <li><a id="cerrar-sesion"><img src="./img/cerrar-sesion.png" class="cerrar-sesion"></a></li>Cerrar Sesión</span></a></li>
