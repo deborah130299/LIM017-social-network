@@ -1,5 +1,5 @@
 //import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
-import { savePost } from "../lib/firebaseConfig.js";
+import { savePosts, getPosts } from "../lib/firebaseConfig.js";
 
 // Renderizando el header
 export const Post = () => {
@@ -10,7 +10,7 @@ export const Post = () => {
         <a href="#/artperfil"><img class="imagenUsuario"></a>
             <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
         </div>
-        <img src="./img/destinos-logo.png" class="titulo-header">
+        <img src="./img/destinos-logo.png" class="logo-destinos0">
         <div class="cerrar-post">
             <ul class="desplegable">
             <li><a id="cerrar-sesion"><img src="./img/cerrar-sesion.png" class="cerrar-sesion"></a></li>Cerrar Sesión</span></a></li>
@@ -23,18 +23,33 @@ export const Post = () => {
         `;
     PostElement.innerHTML = containerPost;
 
-window.addEventListener('DOMContentLoaded',() => {
+const createPost  = PostElement.querySelector('#create-Post');
+const postContainer = document.getElementById('root')
+window.addEventListener('DOMContentLoaded', async() => {
+    const querySnapshot = await getPosts()
+
+    let html = ''
+    querySnapshot.forEach(doc => {
+        const posts = doc.data()
+        html += `
+        <div>
+            <p>${posts.description}</p>
+        </div>
+        `
+    })
+    postContainer.innerHTML = html
 })
 
-const createPost  = PostElement.querySelector("#create-Post");
+
 createPost.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const description = document.getElementById('post-text');
 
-    savePost(description.value)
-
+    savePosts(description.value)
 })
+
+
 
 
 
