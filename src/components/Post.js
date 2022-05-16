@@ -23,11 +23,24 @@ export const Post = () => {
         `;
     PostElement.innerHTML = containerPost;
 
-window.addEventListener('DOMContentLoaded',() => {
-    getPosts();
+const createPost  = PostElement.querySelector('#create-Post');
+const postContainer = document.getElementById('root')
+window.addEventListener('DOMContentLoaded', async() => {
+    const querySnapshot = await getPosts()
+
+    let html = ''
+    querySnapshot.forEach(doc => {
+        const posts = doc.data()
+        html += `
+        <div>
+            <p>${posts.description}</p>
+        </div>
+        `
+    })
+    postContainer.innerHTML = html
 })
 
-const createPost  = PostElement.querySelector("#create-Post");
+
 createPost.addEventListener('submit', (e) => {
     e.preventDefault();
 
