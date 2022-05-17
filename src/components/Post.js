@@ -1,5 +1,5 @@
 //import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
-import { savePosts, onSnapshot, collection, db } from '../lib/firebaseConfig.js';
+import { savePosts, conGetPosts, deletePosts } from '../lib/firebaseConfig.js';
 // Renderizando el header
 export const Post = () => {
   const PostElement = document.createElement('section');
@@ -23,21 +23,28 @@ export const Post = () => {
     PostElement.innerHTML = containerPost;
 
 const createPost  = PostElement.querySelector('#create-Post');
-const postContainer = document.getElementById('root')
+const postContainer = document.querySelector('#root');
 
 window.addEventListener('DOMContentLoaded', async () => {
-    onSnapshot(collection(db, 'Posts'),(querySnapshot) => {
+    conGetPosts((querySnapshot) => {
         let html = '';
 
         querySnapshot.forEach(doc => {
             const task = doc.data();
             html += `
-                <div>
-                    <p>${task.description}</p>
-                </div>
+                <form id='post-public'>
+                    <textarea id='post-public'>${task.description}</textarea>
+                    <button id='btn-borrar' data-id='${doc.id}'>Borrar</button>
+                </form>
             `;
         });
+
         postContainer.innerHTML = html
+        const btnsDelete = postContainer.querySelectorAll('#btn-borrar')
+        btnsDelete.forEach(btn => {
+            btn.addEventListener('click', ({target:{ dataset }}) =>
+            deletePosts(dataset.id))
+        })
     });
 });
 

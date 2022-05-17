@@ -171,6 +171,30 @@ p{
     border-color: rgba(100,201,167,255);
     margin: 2em;
 }
+#post-public {
+    position: relative;
+    background: rgba(255,227,179,255);
+    padding: 10px 10px 10px 10px;
+    font-family: helvetica, sans-serif;
+    align-content: center;
+    border-radius:10px;
+    width: 80%;  /* Or whatever */
+    height: 50%;
+    top: 28%;
+    left: 15%;
+}
+#btn-borrar {
+    width: 15%;
+    height: 30px;
+    border-radius: 8px;
+    background: none;
+    background-color: rgba(100,201,167,255);
+    color: white;
+    font-size: 12px;
+    border-color: rgba(100,201,167,255);
+    margin: 2em;
+    margin-left: 40%;
+}
 
 .cerrar-sesion{
     width:70px;
