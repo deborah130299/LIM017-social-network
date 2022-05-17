@@ -10,7 +10,7 @@ export const Home = () => {
   <div class = 'title'>
   <p> ¡Bienvenid@!</p>
   </div>
-  <section class="welcome-wrapper">
+  <section class='welcome-wrapper'>
   <div  class = 'textWelcome'>
   <a>Somos una comunidad de viajer@s conectados alrededor del mundo, sé parte de esta gran familia</a>
   </div>
