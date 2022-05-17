@@ -1,17 +1,17 @@
 //import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
 import {
-    savePosts,
-    onSnapshot,
-    collection,
-    db,
-    deletePosts,
+  savePosts,
+  onSnapshot,
+  collection,
+  db,
+  deletePosts,
 } from "../lib/firebaseConfig.js";
 //conGetPosts, deletePosts
 // Renderizando el header
 export const Post = () => {
-    const PostElement = document.createElement("section");
-    PostElement.setAttribute("class", "containerView");
-    const containerPost = `
+  const PostElement = document.createElement("section");
+  PostElement.setAttribute("class", "containerView");
+  const containerPost = `
         <div class='enlacePerfil'>
         <a href='#/artperfil"><img class="imagenUsuario'></a>
             <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
@@ -28,55 +28,48 @@ export const Post = () => {
         </form>
         <div id='all-posts'></div>
         `;
-PostElement.innerHTML = containerPost;
+  PostElement.innerHTML = containerPost;
 
-const createPost = PostElement.querySelector("#create-Post");
-const postContainer = PostElement.querySelector("#all-posts");
+  const createPost = PostElement.querySelector("#create-Post");
+  const postContainer = PostElement.querySelector("#all-posts");
 
-window.addEventListener("DOMContentLoaded", async () => {
+  window.addEventListener("DOMContentLoaded", async () => {
     onSnapshot(collection(db, "Posts"), (querySnapshot) => {
-    let html = "";
+      let html = "";
 
-    querySnapshot.forEach((doc) => {
+      querySnapshot.forEach((doc) => {
         const task = doc.data();
         html += `
-            <form class='post-public'>
+            <div class='post-public'>
                 <textarea class='post-public'>${task.description}</textarea>
                 <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
-            </form>
+            </div>
             `;
-        });
-    postContainer.innerHTML = html;
-    });
-});
-    const btnsDelete = postContainer.querySelectorAll(".btn-borrar");
-    btnsDelete.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        deletePosts(e.target.dataset.id);
-    });
-    });
-    /*
-    conGetPosts((querySnapshot) => {
-        let html = '';
+      });
+      postContainer.innerHTML = html;
+      const btnsDelete = postContainer.querySelectorAll(".btn-borrar");
+      console.log(btnsDelete);
 
-        querySnapshot.forEach(doc => {
-            const task = doc.data();
-            html += `
-                <form id='post-public'>
-                    <textarea id='post-public'>${task.description}</textarea>
-                    <button id='btn-borrar' data-id='${doc.id}'>Borrar</button>
-                </form>
-            `;
+      btnsDelete.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          console.log("aaaaaaa");
+          //e.preventDefault();
+          deletePosts(e.target.dataset.id)
+            .catch((err) => {
+              console.log(err);
+            });
         });
-*/
-    createPost.addEventListener("submit", (e) => {
+      });
+    });
+  });
+
+  createPost.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const description = document.getElementById("post-text");
 
     savePosts(description.value);
-    });
+  });
 
-    return PostElement;
+  return PostElement;
 };

@@ -8,6 +8,7 @@ import {
   addDoc,
   getDocs,
   onSnapshot,
+  deleteDoc,
   doc
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
