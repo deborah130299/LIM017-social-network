@@ -6,10 +6,10 @@ import { Post } from "./components/Post.js";
 const rootDiv = document.getElementById("root");
 
 const routes = {
-    "/": Home,
-    "/Register": Register,
-    "/Login": Login,
-    "/Post": Post,
+    "/": Home(),
+    "/Register": Register(),
+    "/Login": Login(),
+    "/Post": Post(),
 
 };
 
@@ -30,8 +30,8 @@ window.onpopstate = () => {
     while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
     }
-    rootDiv.appendChild(routes[window.location.pathname]());
+    rootDiv.appendChild(routes[window.location.pathname]);
 };
 
 
-rootDiv.appendChild(component());
+rootDiv.appendChild(component);
