@@ -6,8 +6,7 @@ export const Login = () => {
     LoginElement.setAttribute("class", "containerView");
     const LoginDiv = `
     <div id="fondo">
-    <img class="logo-destinos0" src="./img/Destinos-logo.png" alt="logo0"/>
-    <img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
+    <img class="logo-destinos1" src="./img/destinos-logo.png" alt="destinos+"/>
     <form id="login" class="loginForm">
     <div class"conteinerGeneral">
     <div class="SingUpBox">

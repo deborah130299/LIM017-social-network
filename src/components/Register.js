@@ -6,8 +6,8 @@ export const Register = () => {
   RegisterElement.setAttribute("class", "containerView");
   const RegisterDiv = `
   <div id="fondo">
-  <img class="logo-destinos0" src="./img/Destinos-logo.png" alt="logo0"/>
-  <img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
+  <img class="logo-destinos1" src="./img/destinos-logo.png" alt="destinos+"/>
+
     <form id="signUpForm"  class="signUpForm">
     <p>Registrarse</p>
       <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="Nombre de usuario")$" title="Solo puede contener letras y números." required/>
