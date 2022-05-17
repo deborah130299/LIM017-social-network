@@ -10,11 +10,14 @@ export const Post = () => {
             <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
         </div>
         <img src='./img/destinos-logo.png' class='logo-destinos0'>
-        <div class='cerrar-post'>
-            <ul class="desplegable">
-            <li><a id='cerrar-sesion'><img src='./img/cerrar-sesion.png' class="cerrar-sesion"></a></li>Cerrar Sesión</span></a></li>
-            </ul>
-        </div>
+        <div id='navbar'>
+    <ul>  
+      <li><a src="./img/destinos-logo.png>logo"</a></li>
+      <li><a id="buttonStart"><button type="button"> <img src="./img/home.png" height ="30" width="40" /></button></a></li>
+      <li><a id="buttonProfile"><button type="button"> <img src="./img/profile.png" height ="30" width="40" /></button></a></li>
+      <li><a id="buttonLogout"><button type="button"> <img src="./img/cerrar.png" height ="30" width="40" /></button></a></li>
+    </ul>
+  </div>
         <form id='create-Post'>
         <textarea id='post-text' rows='6' placeholder='¿Qué quieres compartir?'></textarea>
         <button id='btn-publicar'>Publicar</button>

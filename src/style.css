@@ -38,6 +38,8 @@ body {
     top: 10px;
     left: calc(30% - 50px);
 }
+
+/* home */
  #welcome{
 position: relative;
 top: 30%;
@@ -78,16 +80,12 @@ p{
     column-gap: 10px;
 }
 
+/* Login */
 .loginForm{
     position: relative;
-    top: 30%;
-    padding: 0.5em 0.5em;
-    font-family: helvetica, sans-serif;
-    text-align: center;
-    border-radius:10px;
-    width: 70%;  /* Or whatever */
-    height: 60%;
-    left: 15%;
+    top: 15%;
+   left: 20px;
+    justify-content: space-between;
 
 }
 .SingUpBox{
@@ -98,8 +96,8 @@ p{
     border-radius:10px;
     width: 80%;  /* Or whatever */
     height: 50%;
-    top: 28%;
-    left: 15%;
+    top: 35%;
+    left: 5%;
 }
 .form-control{
     position: relative;
@@ -114,10 +112,26 @@ p{
     outline: none;
     background: rgba(255,227,179,255)
 }
+#iniciar-sesion #registrarse{
+    font-size: x-large;
+    text-align: center;
+ 
+}
+
+
 .form-login{
     padding: 5px 5px 5px 5px;
-}
+} 
+/* register */
 .signUpForm{
+    position: relative;
+    top: 15%;
+   left: 20px;
+    justify-content: space-between;
+
+
+}  
+ .create-Post{
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -125,20 +139,7 @@ p{
     padding: 0.5em 0.5em;
     font-family: helvetica, sans-serif;
     border-radius:10px;
-    width: 70%;  /* Or whatever */
-    height: 40%;
-    margin-top: -20px;
-    margin-left: 15%;
-}
-.create-Post{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background: rgba(255,227,179,255);
-    padding: 0.5em 0.5em;
-    font-family: helvetica, sans-serif;
-    border-radius:10px;
-    width: 70%;  /* Or whatever */
+    width: 70%;  
     height: 40%;
     margin-top: -20px;
     margin-left: 15%;
@@ -179,5 +180,57 @@ p{
     margin-top: -10em;
     margin-inline: 1200px;
 }
-
-
+ 
+/* navbar */
+:root {
+    --pink: #88ddb5;
+  }
+  
+  #navbar {
+    width: 100vw;
+    background-color: #fcfcfc;
+    font-weight: bold;
+  
+  }
+    ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1em 0;
+    }
+  
+    li a {
+      padding-right: 3em;
+      position: relative;
+      transition: all ease-in-out 250ms;
+    }
+  button{
+    background-color: transparent;
+          border: none;
+  }
+  
+    li a::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.4em;
+      width: 0%;
+      background-color: var(--pink);
+      bottom: -1em;
+      transition: all ease-in-out 250ms;
+    }
+  
+    li a:hover::after {
+      width: 60%;
+    }
+  
+    li a:hover {
+      color: var(--pink);
+    }
+  
+    li:first-child {
+      margin-right: auto;
+      margin-left: 3em;
+    }

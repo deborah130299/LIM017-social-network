@@ -9,7 +9,7 @@ export const Register = () => {
   <img class="logo-destinos1" src="./img/destinos-logo.png" alt="destinos+"/>
 
     <form id="signUpForm"  class="signUpForm">
-    <p>Registrarse</p>
+    <p id="registrarse">Registrarse</p>
       <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="Nombre de usuario")$" title="Solo puede contener letras y números." required/>
       <span id="user" class="form-error-none">Sólo puede contener letras y números.</span>
       <input id="signUpEmail" class="formBox" name="email" type="email" placeholder="correo@example.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@example.com" required/>
@@ -24,9 +24,11 @@ export const Register = () => {
         <label class="form-error none">Acepto términos y condiciones</label>
       </div>
       <span id="term" class="form-error none"></span>
+      <div class="flexbox">
       <button id="signUpButton" class="formButton">Registrarte</button>
       <button class="btnVolver">Regresar al Home</button>
-    </form>
+      </div>
+      </form>
     </div>
   `;
 
