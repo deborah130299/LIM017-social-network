@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+#buttonnav{
+    background-color: transparent;
+    border: none;
+  }
+
+
 body {
     width: 100%;
     height: 100%;
@@ -161,16 +167,14 @@ p{
 }
 #btn-publicar {
     margin-top: 11em;
-    width: 15%;
+    width: 3%;
     height: 30px;
     border-radius: 8px;
-    background: none;
     background-color: rgba(100,201,167,255);
-    color: white;
-    font-size: 12px;
     border-color: rgba(100,201,167,255);
     margin: 2em;
 }
+
 #post-public {
     position: relative;
     background: rgba(255,227,179,255);
@@ -183,17 +187,14 @@ p{
     top: 28%;
     left: 15%;
 }
-#btn-borrar {
-    width: 15%;
+.btn-borrar {
+    margin-top: 11em;
+    width: 30px;
     height: 30px;
     border-radius: 8px;
-    background: none;
     background-color: rgba(100,201,167,255);
-    color: white;
-    font-size: 12px;
     border-color: rgba(100,201,167,255);
     margin: 2em;
-    margin-left: 40%;
 }
 
 .cerrar-sesion{
@@ -230,10 +231,7 @@ p{
       position: relative;
       transition: all ease-in-out 250ms;
     }
-  #buttonnav{
-    background-color: transparent;
-          border: none;
-  }
+
   
     li a::after {
       content: "";

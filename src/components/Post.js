@@ -1,3 +1,5 @@
+import { onNavigate } from '../main.js';
+// eslint-disable-next-line import/no-cycle
 //import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
 import {
   savePosts,
@@ -15,10 +17,10 @@ export const Post = () => {
   <header>
         <div id='navbar'>
     <ul>  
-      <li><a> <img src="./img/destinos-logo.png" height="55px" width="180px" /></a></li>
-      <li><a id="buttonnav"><button type="button"> <img src="./img/home.png" height ="30" width="40" /></button></a></li>
-      <li><a id="buttonnav"><button type="button"> <img src="./img/profile.png" height ="30" width="40" /></button></a></li>
-      <li><a id="buttonnav"><button type="button"> <img src="./img/cerrar.png" height ="30" width="40" /></button></a></li>
+      <li><a> <img src="./img/logodenav.png" height="55px" width="180px" /></a></li>
+      <li><a><button id="buttonnav"> <img src="./img/home.png" height ="30" width="40" /></button></a></li>
+      <li><a><button id="buttonnav"> <img src="./img/profile.png" height ="30" width="40" /></button></a></li>
+      <li><a><button id="buttonnav" class="logout"> <img src="./img/cerrar.png" height ="30" width="40" /></button></a></li>
     </ul>
   </div>
 </header>
@@ -27,13 +29,16 @@ export const Post = () => {
     <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
 </div>
         <form id='create-Post'>
-        <textarea id='post-text' rows='6' placeholder='¿Qué quieres compartir?'></textarea>
-        <button id='btn-publicar'>Publicar</button>
+        <textarea id='post-text' rows="6" cols="50" placeholder='¿Qué quieres compartir?'></textarea>
+        <button id="btn-publicar"><img src="./img/share.png" height ="20" width="30" /></button>
         </form>
         <div id='all-posts'></div>
         `;
         PostElement.innerHTML = containerPost;
-
+        PostElement.querySelector('.logout').addEventListener('click', () => {
+         onNavigate('/');
+          });
+    
         const createPost = PostElement.querySelector("#create-Post");
         const postContainer = PostElement.querySelector("#all-posts");
       
@@ -46,7 +51,7 @@ export const Post = () => {
               html += `
                   <div class='post-public'>
                       <textarea class='post-public'>${task.description}</textarea>
-                      <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
+                      <button class="btn-borrar" data-id='${doc.id}'><img src="./img/delete.png" height ="30" width="40" /></button>
                   </div>
                   `;
             });
@@ -74,6 +79,7 @@ export const Post = () => {
       
           savePosts(description.value);
         });
-      
+    
+
         return PostElement;
       };
