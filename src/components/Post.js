@@ -12,21 +12,25 @@ export const Post = () => {
   const PostElement = document.createElement("section");
   PostElement.setAttribute("class", "containerView");
   const containerPost = `
-        <div class='enlacePerfil'>
-        <a href='#/artperfil"><img class="imagenUsuario'></a>
-            <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
-        </div>
-        <img src='./img/destinos-logo.png' class='logo-destinos0'>
-        <div class='cerrar-post'>
-            <ul class="desplegable">
-            <li><a id='cerrar-sesion'><img src='./img/cerrar-sesion.png' class="cerrar-sesion"></a></li>Cerrar Sesión</span></a></li>
-            </ul>
-        </div>
-        <form id='create-Post'>
-        <textarea id='post-text' rows='6' placeholder='¿Qué quieres compartir?'></textarea>
-        <button id='btn-publicar'>Publicar</button>
-        </form>
-        <div id='all-posts'></div>
+  <header>
+    <div id='navbar'>
+    <ul>
+      <li><a> <img src="./img/logodenav.png" height="55px" width="180px" /></a></li>
+      <li><a><button id="buttonnav"> <img src="./img/home.png" height ="30" width="40" /></button></a></li>
+      <li><a><button id="buttonnav"> <img src="./img/profile.png" height ="30" width="40" /></button></a></li>
+      <li><a><button id="buttonnav" class="logout"> <img src="./img/cerrar.png" height ="30" width="40" /></button></a></li>
+    </ul>
+    </div>
+  </header>
+  <div class='enlacePerfil'>
+    <a href='#/artperfil"><img class="imagenUsuario'></a>
+    <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
+  </div>
+  <form id='create-Post'>
+    <textarea id='post-text' rows="6" cols="50" placeholder='¿Qué quieres compartir?'></textarea>
+    <button id="btn-publicar"><img src="./img/share.png" height ="20" width="30" /></button>
+  </form>
+  <div id='all-posts'></div>
         `;
   PostElement.innerHTML = containerPost;
 
@@ -54,10 +58,9 @@ export const Post = () => {
         btn.addEventListener("click", (e) => {
           console.log("aaaaaaa");
           //e.preventDefault();
-          deletePosts(e.target.dataset.id)
-            .catch((err) => {
-              console.log(err);
-            });
+          deletePosts(e.target.dataset.id).catch((err) => {
+            console.log(err);
+          });
         });
       });
     });
