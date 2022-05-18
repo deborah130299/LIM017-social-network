@@ -18,9 +18,9 @@ export const Post = () => {
         <div id='navbar'>
     <ul>  
       <li><a> <img src="./img/destinos-logo.png" height="55px" width="180px" /></a></li>
-      <li><a id="buttonStart"><button type="button"> <img src="./img/home.png" height ="30" width="40" /></button></a></li>
-      <li><a id="buttonProfile"><button type="button"> <img src="./img/profile.png" height ="30" width="40" /></button></a></li>
-      <li><a id="buttonLogout"><button type="button"> <img src="./img/cerrar.png" height ="30" width="40" /></button></a></li>
+      <li><a id="buttonnav"><button type="button"> <img src="./img/home.png" height ="30" width="40" /></button></a></li>
+      <li><a id="buttonnav"><button type="button"> <img src="./img/profile.png" height ="30" width="40" /></button></a></li>
+      <li><a id="buttonnav"><button type="button"> <img src="./img/cerrar.png" height ="30" width="40" /></button></a></li>
     </ul>
   </div>
 </header>

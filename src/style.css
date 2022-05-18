@@ -230,7 +230,7 @@ p{
       position: relative;
       transition: all ease-in-out 250ms;
     }
-  button{
+  #buttonnav{
     background-color: transparent;
           border: none;
   }
