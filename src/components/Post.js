@@ -1,4 +1,4 @@
-//import { cierreActividadUsuario } from "../firebase/funcionesAuth.js";
+import { onNavigate } from '../main.js'
 import {
   savePosts,
   onSnapshot,
@@ -33,6 +33,9 @@ export const Post = () => {
   <div id='all-posts'></div>
         `;
   PostElement.innerHTML = containerPost;
+  PostElement.querySelector('.logout').addEventListener('click', () => {
+    onNavigate('/');
+     });
 
   const createPost = PostElement.querySelector("#create-Post");
   const postContainer = PostElement.querySelector("#all-posts");
@@ -57,7 +60,7 @@ export const Post = () => {
       btnsDelete.forEach((btn) => {
         btn.addEventListener("click", (e) => {
           console.log("aaaaaaa");
-          //e.preventDefault();
+          e.preventDefault();
           deletePosts(e.target.dataset.id).catch((err) => {
             console.log(err);
           });
@@ -72,6 +75,8 @@ export const Post = () => {
     const description = document.getElementById("post-text");
 
     savePosts(description.value);
+
+    createPost.reset();
   });
 
   return PostElement;

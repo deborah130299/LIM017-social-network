@@ -11,7 +11,7 @@ export const Home = () => {
   <form id='welcome" class="welcomeForm'>
 
   <div class = 'title'>
-  <p> ¡Bienvenid@!</p>
+  <p class="title"> ¡Bienvenid@!</p>
   </div>
   <section class='welcome-wrapper'>
   <div  class = 'textWelcome'>

@@ -11,20 +11,29 @@ export const Login = () => {
     <form id="login" class="loginForm">
     <div class"conteinerGeneral">
     <div class="SingUpBox">
+
         <form id="formLogIn" class="formLogIn">
-        <div class="form-login">
-        <p>Iniciar Sesion</p>
-        <input id="email" class="form-control" type="email" placeholder="Correo electrónico">
-        </div>
-        <div class="form-login">
+
+          <div class="form-login">
+          <p id="tittle-login">Iniciar Sesión</p>
+          <input id="email" class="form-control" type="email" placeholder="Correo electrónico">
+          </div>
+
+          <div class="form-login">
             <input minlength="5" id="password" class="form-control" type="password"
             placeholder="Contraseña">
-        </div>
-        <button id="btnSignIn" class="button">Inicia sesión</button>
-        <button class="btnVolver">Regresar al Home</button>
+          </div>
+
+          <div>
+            <button id="btnSignIn" class="button">Inicia sesión</button>
+            <button class="btnVolver">Regresar al Home</button>
+          </div>
+
         </form>
-        </form>
-        </div>
+    </div>
+    </div>
+    </form>
+    </div>
         `;
 
     LoginElement.innerHTML = LoginDiv;
