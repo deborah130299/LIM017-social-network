@@ -1,13 +1,12 @@
 import { onNavigate } from "../main.js";
 import { registerWithEmail } from "../lib/authFunctions.js";
-
+//<img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
 export const Register = () => {
   const RegisterElement = document.createElement("section");
   RegisterElement.setAttribute("class", "containerView");
   const RegisterDiv = `
   <div id="fondo">
   <img class="logo-destinos0" src="./img/Destinos-logo.png" alt="logo0"/>
-  <img class="logo-destinos1" src="./img/destinos.png" alt="destinos+"/>
     <form id="signUpForm"  class="signUpForm">
     <p>Registrarse</p>
       <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="Nombre de usuario")$" title="Solo puede contener letras y números." required/>
@@ -24,13 +23,17 @@ export const Register = () => {
         <label class="form-error none">Acepto términos y condiciones</label>
       </div>
       <span id="term" class="form-error none"></span>
-      <button id="signUpButton" class="formButton">Registrarte</button>
+      <button id="signUpButton" class="sigUpButton">Registrarte</button>
       <button class="btnVolver">Regresar al Home</button>
     </form>
     </div>
   `;
 
   RegisterElement.innerHTML = RegisterDiv;
+  RegisterElement.querySelector('.sigUpButton').addEventListener('click', () => {
+    onNavigate('/');
+    });
+
   const buttonRegister = RegisterElement.querySelector('#signUpButton');
   buttonRegister.addEventListener ( 'click', (e) => {
     e.preventDefault ();

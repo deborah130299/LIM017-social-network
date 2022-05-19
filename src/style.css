@@ -33,6 +33,20 @@ body {
     border-radius: 10%;
 }
 
+#fondo-post {
+    width: 370px;
+    height: 520px;
+    background: white;
+    color: rgb(0, 0, 0);
+    top: 45%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 10%;
+}
+
 .logo-destinos0{
     width:65%;
     height:25%;
@@ -91,7 +105,7 @@ p{
     flex-direction: column;
     align-items:center;
     margin-top: 5px;
-    height: 60%;
+    height: 8%;
     min-width:50%;
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
@@ -118,7 +132,7 @@ p{
     font-family: helvetica, sans-serif;
     text-align: center;
     border-radius:10px;
-    width: 80%;  /* Or whatever */
+    width: 80%;
     left: 15%;
 }
 .form-control{
@@ -142,12 +156,12 @@ p{
     flex-direction: column;
     text-align: center;
     background: rgba(255,227,179,255);
-    padding: 0.5em 0.5em;
+    padding: 10px 10px;
     font-family: helvetica, sans-serif;
     border-radius:10px;
-    width: 70%;  /* Or whatever */
-    height: 40%;
-    margin-top: -20px;
+    width: 70%;
+    height: 95%;
+    margin-top: 60px;
     margin-left: 15%;
 }
 .create-Post{
@@ -175,12 +189,14 @@ p{
 #create-Post {
     display: flex;
     justify-content: center;
+    position: absolute;
+    width:330px;
     align-items: center;
     margin-top: 4em;
-    margin-inline: -300px;
+    left: 15px;
+    margin-inline: 220px;
 }
 #btn-publicar {
-    margin-top: 11em;
     width: 15%;
     height: 30px;
     border-radius: 8px;
@@ -189,7 +205,7 @@ p{
     color: white;
     font-size: 12px;
     border-color: rgba(100,201,167,255);
-    margin: 2em;
+    margin: 5px;
 }
 #post-public {
     position: relative;

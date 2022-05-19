@@ -1,3 +1,4 @@
+import { auth } from '../lib/authFunctions.js';
 import { onNavigate } from '../main.js'
 import {
   savePosts,
@@ -5,44 +6,43 @@ import {
   collection,
   db,
   deletePosts,
-} from "../lib/firebaseConfig.js";
+} from '../lib/firebaseConfig.js';
 //conGetPosts, deletePosts
 // Renderizando el header
 export const Post = () => {
-  const PostElement = document.createElement("section");
-  PostElement.setAttribute("class", "containerView");
+  const PostElement = document.createElement('section');
+  PostElement.setAttribute('class', 'containerView');
   const containerPost = `
   <header>
     <div id='navbar'>
     <ul>
-      <li><a> <img src="./img/logodenav.png" height="55px" width="180px" /></a></li>
-      <li><a><button id="buttonnav"> <img src="./img/home.png" height ="30" width="40" /></button></a></li>
-      <li><a><button id="buttonnav"> <img src="./img/profile.png" height ="30" width="40" /></button></a></li>
-      <li><a><button id="buttonnav" class="logout"> <img src="./img/cerrar.png" height ="30" width="40" /></button></a></li>
+      <li><a> <img src='./img/logodenav.png' height='55px' width='180px' /></a></li>
+      <li><a><button id='buttonnav'> <img src='./img/home.png' height ='30' width='40' /></button></a></li>
+      <li><a><button id='buttonnav'> <img src='./img/profile.png' height ='30' width='40' /></button></a></li>
+      <li><a><button id='buttonnav' class='logout'> <img src='./img/cerrar.png' height ='30' width='40' /></button></a></li>
     </ul>
     </div>
   </header>
-  <div class='enlacePerfil'>
-    <a href='#/artperfil"><img class="imagenUsuario'></a>
-    <p class="nombreUsuario"><a id="perfil" href="#/artperfil"></a></p>
+  <div id='fondo'>
+    <a href='#/artperfil'><img class='imagenUsuario'></a>
+    <p class='nombreUsuario'><a id='perfil' href='#/artperfil'></a></p>
   </div>
   <form id='create-Post'>
-    <textarea id='post-text' rows="6" cols="50" placeholder='¿Qué quieres compartir?'></textarea>
-    <button id="btn-publicar"><img src="./img/share.png" height ="20" width="30" /></button>
+    <textarea id='post-text' rows='6' cols='50' placeholder='¿Qué quieres compartir?'></textarea>
+    <button id="btn-publicar"><img src='./img/share.png' height ='20' width='30' /></button>
   </form>
   <div id='all-posts'></div>
         `;
   PostElement.innerHTML = containerPost;
   PostElement.querySelector('.logout').addEventListener('click', () => {
     onNavigate('/');
-     });
+    });
+  console.log(auth.currentUser);
+  const createPost = PostElement.querySelector('#create-Post');
+  const postContainer = PostElement.querySelector('#all-posts');
 
-  const createPost = PostElement.querySelector("#create-Post");
-  const postContainer = PostElement.querySelector("#all-posts");
-
-  window.addEventListener("DOMContentLoaded", async () => {
-    onSnapshot(collection(db, "Posts"), (querySnapshot) => {
-      let html = "";
+    onSnapshot(collection(db, 'Posts'), (querySnapshot) => {
+      let html = '';
 
       querySnapshot.forEach((doc) => {
         const task = doc.data();
@@ -67,7 +67,7 @@ export const Post = () => {
         });
       });
     });
-  });
+
 
   createPost.addEventListener("submit", (e) => {
     e.preventDefault();
