@@ -1,17 +1,17 @@
-import { auth } from '../lib/authFunctions.js';
-import { onNavigate } from '../main.js'
+//import { auth } from "../lib/authFunctions.js";
+import { onNavigate } from "../main.js";
 import {
   savePosts,
   onSnapshot,
   collection,
   db,
   deletePosts,
-} from '../lib/firebaseConfig.js';
+} from "../lib/firebaseConfig.js";
 //conGetPosts, deletePosts
 // Renderizando el header
 export const Post = () => {
-  const PostElement = document.createElement('section');
-  PostElement.setAttribute('class', 'containerView');
+  const PostElement = document.createElement("section");
+  PostElement.setAttribute("class", "containerView");
   const containerPost = `
   <header>
     <div id='navbar'>
@@ -23,7 +23,7 @@ export const Post = () => {
     </ul>
     </div>
   </header>
-  <div id='fondo'>
+  <div class='fondo'>
     <a href='#/artperfil'><img class='imagenUsuario'></a>
     <p class='nombreUsuario'><a id='perfil' href='#/artperfil'></a></p>
   </div>
@@ -34,40 +34,39 @@ export const Post = () => {
   <div id='all-posts'></div>
         `;
   PostElement.innerHTML = containerPost;
-  PostElement.querySelector('.logout').addEventListener('click', () => {
-    onNavigate('/');
-    });
-  console.log(auth.currentUser);
-  const createPost = PostElement.querySelector('#create-Post');
-  const postContainer = PostElement.querySelector('#all-posts');
+  PostElement.querySelector(".logout").addEventListener("click", () => {
+    onNavigate("/");
+  });
+  //console.log(auth.currentUser);
+  const createPost = PostElement.querySelector("#create-Post");
+  const postContainer = PostElement.querySelector("#all-posts");
 
-    onSnapshot(collection(db, 'Posts'), (querySnapshot) => {
-      let html = '';
+  onSnapshot(collection(db, "Posts"), (querySnapshot) => {
+    let html = "";
 
-      querySnapshot.forEach((doc) => {
-        const task = doc.data();
-        html += `
+    querySnapshot.forEach((doc) => {
+      const task = doc.data();
+      html += `
             <div class='post-public'>
                 <textarea class='post-public'>${task.description}</textarea>
                 <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
             </div>
             `;
-      });
-      postContainer.innerHTML = html;
-      const btnsDelete = postContainer.querySelectorAll(".btn-borrar");
-      console.log(btnsDelete);
+    });
+    postContainer.innerHTML = html;
+    const btnsDelete = postContainer.querySelectorAll(".btn-borrar");
+    console.log(btnsDelete);
 
-      btnsDelete.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          console.log("aaaaaaa");
-          e.preventDefault();
-          deletePosts(e.target.dataset.id).catch((err) => {
-            console.log(err);
-          });
+    btnsDelete.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        console.log("aaaaaaa");
+        e.preventDefault();
+        deletePosts(e.target.dataset.id).catch((err) => {
+          console.log(err);
         });
       });
     });
-
+  });
 
   createPost.addEventListener("submit", (e) => {
     e.preventDefault();
