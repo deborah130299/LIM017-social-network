@@ -13,7 +13,7 @@ export const Post = () => {
   const PostElement = document.createElement("section");
   PostElement.setAttribute("class", "containerView");
   const containerPost = `
-  <header>
+  <header class='navbar'>
     <div id='navbar'>
     <ul>
       <li><a> <img src='./img/logodenav.png' height='55px' width='180px' /></a></li>
@@ -49,8 +49,8 @@ export const Post = () => {
       const task = doc.data();
       html += `
             <div class='post-public'>
-            <textarea class='post-public'>${task.description}</textarea>
             <textarea class='post-public'>${task.tittle}</textarea>
+            <textarea class='post-public'>${task.description}</textarea>
                 <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
             </div>
             `;
