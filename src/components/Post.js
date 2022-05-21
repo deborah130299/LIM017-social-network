@@ -49,8 +49,8 @@ export const Post = () => {
       const task = doc.data();
       html += `
             <div class='post-public'>
+            <textarea class='post-public'>${task.description}</textarea>
             <textarea class='post-public'>${task.tittle}</textarea>
-                <textarea class='post-public'>${task.description}</textarea>
                 <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
             </div>
             `;
