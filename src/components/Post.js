@@ -28,7 +28,8 @@ export const Post = () => {
     <p class='nombreUsuario'><a id='perfil' href='#/artperfil'></a></p>
   </div>
   <form id='create-Post'>
-    <textarea id='post-text' rows='6' cols='50' placeholder='¿Qué quieres compartir?'></textarea>
+    <textarea id='post-tittle' rows='2' cols='50' placeholder='¿Qué quieres compartir?'></textarea>
+    <textarea id='post-text' rows='6' cols='50' placeholder='Escribe aquí'></textarea>
     <button id="btn-publicar"><img src='./img/share.png' height ='20' width='30' /></button>
   </form>
   <div id='all-posts'></div>
@@ -48,6 +49,7 @@ export const Post = () => {
       const task = doc.data();
       html += `
             <div class='post-public'>
+            <textarea class='post-public'>${task.tittle}</textarea>
                 <textarea class='post-public'>${task.description}</textarea>
                 <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
             </div>
@@ -71,9 +73,11 @@ export const Post = () => {
   createPost.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    const tittle = document.getElementById("post-tittle");
     const description = document.getElementById("post-text");
 
-    savePosts(description.value);
+    savePosts(tittle.value, description.value);
+    
 
     createPost.reset();
   });
