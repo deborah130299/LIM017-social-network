@@ -247,8 +247,8 @@ textarea, #post-tittle {
     margin-top: 20px;
     left: 210px;
 }
-#btn-borrar {
-    width: 15%;
+.btn-borrar {
+    width: 20%;
     height: 30px;
     border-radius: 8px;
     background: none;
@@ -256,8 +256,18 @@ textarea, #post-tittle {
     color: white;
     font-size: 12px;
     border-color: rgba(100,201,167,255);
-    margin: 2em;
-    margin-left: 40%;
+    margin-left: 0%;
+}
+.btn-edit {
+    width: 20%;
+    height: 30px;
+    border-radius: 8px;
+    background: none;
+    background-color: rgba(100,201,167,255);
+    color: white;
+    font-size: 12px;
+    border-color: rgba(100,201,167,255);
+    margin-left: 0%;
 }
 
 .cerrar-sesion{

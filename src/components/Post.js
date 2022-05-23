@@ -1,13 +1,14 @@
 //import { auth } from "../lib/authFunctions.js";
 import { onNavigate } from "../main.js";
 import {
-  savePosts,
+  savePost,
   onSnapshot,
   collection,
   db,
-  deletePosts,
+  getPost,
+  deletePosts
 } from "../lib/firebaseConfig.js";
-//conGetPosts, deletePosts
+
 // Renderizando el header
 export const Post = () => {
   const PostElement = document.createElement("section");
@@ -28,7 +29,7 @@ export const Post = () => {
     <p class='nombreUsuario'><a id='perfil' href='#/artperfil'></a></p>
   </div>
   <form id='create-Post'>
-    <textarea id='post-tittle' rows='2' cols='50' placeholder='¿Qué quieres compartir?'></textarea>
+    <textarea id='post-title' rows='2' cols='50' placeholder='¿Qué quieres compartir?'></textarea>
     <textarea id='post-text' rows='6' cols='50' placeholder='Escribe aquí'></textarea>
     <button id="btn-publicar"><img src='./img/share.png' height ='20' width='30' /></button>
   </form>
@@ -49,23 +50,32 @@ export const Post = () => {
       const task = doc.data();
       html += `
             <div class='post-public'>
-            <textarea class='post-public'>${task.tittle}</textarea>
+            <textarea class='post-public'>${task.title}</textarea>
             <textarea class='post-public'>${task.description}</textarea>
                 <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
+                <button class='btn-edit' data-id='${doc.id}'>Editar</button>
             </div>
             `;
     });
     postContainer.innerHTML = html;
     const btnsDelete = postContainer.querySelectorAll(".btn-borrar");
-    console.log(btnsDelete);
 
     btnsDelete.forEach((btn) => {
       btn.addEventListener("click", (e) => {
-        console.log("aaaaaaa");
         e.preventDefault();
         deletePosts(e.target.dataset.id).catch((err) => {
           console.log(err);
         });
+      });
+    });
+
+  const btnsEdit = postContainer.querySelectorAll(".btn-edit");
+
+  btnsEdit.forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const doc = await getPost(e.target.dataset.id)
+        console.log(doc.data())
       });
     });
   });
@@ -73,11 +83,10 @@ export const Post = () => {
   createPost.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const tittle = document.getElementById("post-tittle");
+    const title = document.getElementById("post-title");
     const description = document.getElementById("post-text");
 
-    savePosts(tittle.value, description.value);
-    
+    savePost(title.value, description.value);
 
     createPost.reset();
   });

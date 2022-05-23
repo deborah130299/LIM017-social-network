@@ -11,16 +11,15 @@ export const Home = () => {
   <form id='welcome" class="welcomeForm'>
 
   <div class = 'title'>
-  <p class="title"> ¡Bienvenid@!</p>
+    <p class="title"> ¡Bienvenid@!</p>
   </div>
   <section class='welcome-wrapper'>
-  <div  class = 'textWelcome'>
-  <a>Somos una comunidad de viajer@s conectados alrededor del mundo, sé parte de esta gran familia</a>
-
-  </div>
-  <button class='btnUnete'>Crea tu cuenta</button>
-  <button class='btnIniciar'>Iniciar Sesion</button>
-</section>
+    <div  class = 'textWelcome'>
+      <a>Somos una comunidad de viajer@s conectados alrededor del mundo, sé parte de esta gran familia</a>
+    </div>
+    <button class='btnUnete'>Crea tu cuenta</button>
+    <button class='btnIniciar'>Iniciar Sesion</button>
+  </section>
   </form>
   </div>
   `;
