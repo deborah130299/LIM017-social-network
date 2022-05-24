@@ -9,7 +9,9 @@ import {
   getDocs,
   onSnapshot,
   deleteDoc,
-  doc
+  getDoc,
+  doc,
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,19 +30,32 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
-export const savePosts = (tittle, description) => {
-  addDoc(collection(db, 'Posts'), {tittle, description});
+export const savePost = (title, description, author) => {
+  addDoc(collection(db, 'Posts'), {
+    title,
+    description,
+    author: localStorage.getItem('email')});
 }
 
-export const getPosts = (description) => {
-  getDocs(collection(db, 'Posts'), {description:description});
+export const getPosts = (title, description) => {
+  getDocs(collection(db, 'Posts'), {title, description});
 }
 
-export const conGetPosts = (callback) =>
+export const onGetPosts = (callback) =>
   onSnapshot(collection(db, 'Posts'), callback);
 
 export const deletePosts = (id) => deleteDoc(doc(db, 'Posts', id));
+
+export const getPost = (id) => getDoc(doc(db, 'Posts', id));
+
+export const updatePost = (id, newFields) =>
+  updateDoc(doc(db, 'Posts', id), newFields);
+
 export{
   collection,
   onSnapshot,
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/main
