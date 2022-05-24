@@ -97,10 +97,10 @@ export const Post = () => {
 
     const title = document.getElementById("post-title");
     const description = document.getElementById("post-text");
-    const author = document.getElementById("post-author");
+
 
     if (!editStatus) {
-      savePost(title.value, description.value, author.value);
+      savePost(title.value, description.value);
     } else {
       updatePost(id, {
         title:title.value,
