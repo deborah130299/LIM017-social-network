@@ -21,7 +21,7 @@ export const Login = () => {
 
           <div class="form-login">
             <input minlength="5" id="password" class="form-control" type="password"
-            placeholder="Contraseña">
+            placeholder="Contraseña" autocomplete="current-password">
           </div>
 
           <div>
@@ -46,8 +46,8 @@ export const Login = () => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      console.log(user);
       onNavigate('/Post');
+      localStorage.setItem('email', user.email);
       // ...
     })
     .catch((error) => {

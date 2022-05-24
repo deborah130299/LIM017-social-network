@@ -19,8 +19,6 @@ export const Post = () => {
     <div id='navbar'>
     <ul>
       <li><a> <img src='./img/logodenav.png' height='55px' width='180px' /></a></li>
-      <li><a><button id='buttonnav'> <img src='./img/home.png' height ='30' width='40' /></button></a></li>
-      <li><a><button id='buttonnav'> <img src='./img/profile.png' height ='30' width='40' /></button></a></li>
       <li><a><button id='buttonnav' class='logout'> <img src='./img/cerrar.png' height ='30' width='40' /></button></a></li>
     </ul>
     </div>
@@ -56,6 +54,7 @@ export const Post = () => {
             <div class='post-public'>
             <h1 id='post-public'>${task.title}</h1>
             <p id='post-public'>${task.description}</p>
+            <p id='post-author'>${task.author}</p>
                 <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
                 <button class='btn-edit' data-id='${doc.id}'>Editar</button>
             </div>
@@ -87,7 +86,7 @@ export const Post = () => {
       editStatus = true;
       id = doc.id;
 
-      createPost['btn-publicar'].innerText = 'Update'
+      createPost['btn-publicar'].innerText = 'Actualizar'
 
       });
     });
@@ -98,9 +97,10 @@ export const Post = () => {
 
     const title = document.getElementById("post-title");
     const description = document.getElementById("post-text");
+    const author = document.getElementById("post-author");
 
     if (!editStatus) {
-      savePost(title.value, description.value);
+      savePost(title.value, description.value, author.value);
     } else {
       updatePost(id, {
         title:title.value,

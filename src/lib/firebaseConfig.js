@@ -30,8 +30,11 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
-export const savePost = (title, description) => {
-  addDoc(collection(db, 'Posts'), {title, description});
+export const savePost = (title, description, author) => {
+  addDoc(collection(db, 'Posts'), {
+    title,
+    description,
+    author: localStorage.getItem('email')});
 }
 
 export const getPosts = (title, description) => {
