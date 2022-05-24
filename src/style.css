@@ -53,7 +53,6 @@ body {
     position: absolute;
     top: 20px;
     left: calc(30% - 50px);
-
 }
 
 .logo-destinos1{
@@ -68,6 +67,7 @@ body {
 button{
     margin-top: 10px;
     height: 37px;
+    width: 48%;
     border-radius: 8px;
     padding: 5px 5px 5px 5px;
     background: none;
@@ -75,8 +75,8 @@ button{
     color: white;
     font-size: 12px;
     border-color:  rgba(100,201,167,255);
-
     }
+
 #tittle-login {
     margin-top: 2px;
     font-size: x-large;
