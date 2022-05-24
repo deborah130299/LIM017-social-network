@@ -67,7 +67,6 @@ body {
 
 button{
     margin-top: 10px;
-    width: 48%;
     height: 37px;
     border-radius: 8px;
     padding: 5px 5px 5px 5px;
@@ -211,19 +210,19 @@ p{
     border-color: rgba(100,201,167,255);
     margin: 5px;
 }
-textarea.post-public {
+/*.post-public {
     position: relative;
     background: white;
     padding: 10px 10px 10px 10px;
     font-family: helvetica, sans-serif;
     align-content: center;
     border-radius:10px;
-    width: 340px;  /* Or whatever */
+    width: 340px;
     height: 50%;
     margin-top: 2px;
     left: 1px;
-}
-textarea, #post-tittle {
+*/
+textarea, #post-public {
     position: relative;
     background: white;
     border-color: #88ddb5;

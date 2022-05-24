@@ -6,7 +6,8 @@ import {
   collection,
   db,
   getPost,
-  deletePosts
+  deletePosts,
+  updatePost
 } from "../lib/firebaseConfig.js";
 
 // Renderizando el header
@@ -43,6 +44,9 @@ export const Post = () => {
   const createPost = PostElement.querySelector("#create-Post");
   const postContainer = PostElement.querySelector("#all-posts");
 
+  let editStatus = false;
+  let id = "";
+
   onSnapshot(collection(db, "Posts"), (querySnapshot) => {
     let html = "";
 
@@ -50,8 +54,8 @@ export const Post = () => {
       const task = doc.data();
       html += `
             <div class='post-public'>
-            <textarea class='post-public'>${task.title}</textarea>
-            <textarea class='post-public'>${task.description}</textarea>
+            <h1 id='post-public'>${task.title}</h1>
+            <p id='post-public'>${task.description}</p>
                 <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
                 <button class='btn-edit' data-id='${doc.id}'>Editar</button>
             </div>
@@ -75,7 +79,16 @@ export const Post = () => {
     btn.addEventListener("click", async (e) => {
       e.preventDefault();
       const doc = await getPost(e.target.dataset.id)
-        console.log(doc.data())
+      const task = doc.data()
+
+      createPost['post-title'].value = task.title
+      createPost['post-text'].value = task.description
+
+      editStatus = true;
+      id = doc.id;
+
+      createPost['btn-publicar'].innerText = 'Update'
+
       });
     });
   });
@@ -86,8 +99,16 @@ export const Post = () => {
     const title = document.getElementById("post-title");
     const description = document.getElementById("post-text");
 
-    savePost(title.value, description.value);
+    if (!editStatus) {
+      savePost(title.value, description.value);
+    } else {
+      updatePost(id, {
+        title:title.value,
+        description: description.value
+      });
 
+      editStatus = false;
+    }
     createPost.reset();
   });
 
