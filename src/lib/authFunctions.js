@@ -31,3 +31,8 @@ export const signInApp = (email, password) => {
 return signInWithEmailAndPassword(auth, email, password);
 
 };
+/*
+export  const auth = getAuth();
+export const user = auth.currentUser;
+console.log(user, auth);
+*/

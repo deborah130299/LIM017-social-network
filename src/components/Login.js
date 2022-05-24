@@ -6,33 +6,34 @@ export const Login = () => {
     LoginElement.setAttribute("class", "containerView");
     const LoginDiv = `
     <div id="fondo">
-    <img class="logo-destinos1" src="./img/destinos-logo.png" alt="destinos+" />
+    <img class="logo-destinos0" src="./img/logo-destinos0.png" alt="logo0"/>
+    <img class="logo-destinos1" src="./img/logo-destinos1.png" alt="destinos+"/>
     <form id="login" class="loginForm">
-      <div class="conteinerGeneral">
-        <div class="SingUpBox">
-          
-          <form id="formLogIn" class="formLogIn">
-           
-            <div class="form-login">
-              <p id="iniciar-sesion">Inicia Sesion</p>
-              <input id="email" class="form-control" type="email" placeholder="Correo electrónico">
-            </div>
-           
-            <div class="form-login">
-              <input minlength="5" id="password" class="form-control" type="password" placeholder="Contraseña">
-            </div>
-            
-            <div class="flexbox">
-              <button id="btnSignIn" class="button">Inicia sesión</button>
-              <button class="btnVolver">Regresar al Home</button>
-            </div>
+    <div class"conteinerGeneral">
+    <div class="SingUpBox">
 
-          </form>
+        <form id="formLogIn" class="formLogIn">
 
-        </div>
-      </div>
+          <div class="form-login">
+          <p id="tittle-login">Iniciar Sesión</p>
+          <input id="email" class="form-control" type="email" placeholder="Correo electrónico">
+          </div>
+
+          <div class="form-login">
+            <input minlength="5" id="password" class="form-control" type="password"
+            placeholder="Contraseña">
+          </div>
+
+          <div>
+            <button id="btnSignIn" class="button">Inicia sesión</button>
+            <button class="btnVolver">Regresar al Home</button>
+          </div>
+
+        </form>
+    </div>
+    </div>
     </form>
-       
+    </div>
         `;
 
     LoginElement.innerHTML = LoginDiv;
