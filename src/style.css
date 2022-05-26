@@ -101,10 +101,16 @@ p{
     text-align: center;
     font-weight:bolder;
     }
-    
-.textWelcome, a{
-    color:rgb(4,);
+#post-author{
+    color:rgb(120,120,120);
+    padding: 5px;
     font-size: small;
+    text-align: center;
+    font-weight:bolder;
+}
+.textWelcome, a{
+    color:rgb(0,0,0);
+    font-size: medium;
     text-align: center;
     font-weight:bolder;
     }
@@ -204,18 +210,7 @@ p{
     border-color: rgba(100,201,167,255);
     margin: 5px;
 }
-/*.post-public {
-    position: relative;
-    background: white;
-    padding: 10px 10px 10px 10px;
-    font-family: helvetica, sans-serif;
-    align-content: center;
-    border-radius:10px;
-    width: 340px;
-    height: 50%;
-    margin-top: 2px;
-    left: 1px;
-*/
+
 textarea, #post-public {
     position: relative;
     background: white;
@@ -241,6 +236,8 @@ textarea, #post-public {
     left: 210px;
 }
 .btn-borrar {
+    display: inline-block;
+    text-align: center;
     width: 20%;
     height: 30px;
     border-radius: 8px;
@@ -249,9 +246,11 @@ textarea, #post-public {
     color: white;
     font-size: 12px;
     border-color: rgba(100,201,167,255);
-    margin-left: 0%;
+    margin-left: 28%;
 }
 .btn-edit {
+    display: inline-block;
+    text-align: center;
     width: 20%;
     height: 30px;
     border-radius: 8px;

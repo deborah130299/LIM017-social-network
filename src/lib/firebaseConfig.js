@@ -2,7 +2,8 @@
 /* eslint-disable no-undef */
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
 import {
   collection,
   addDoc,
@@ -29,6 +30,9 @@ const firebaseConfig = {
   // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+
+export const author = getAuth(app);
+export const firestore = getFirestore(app); // esto es db // usuarios
 
 export const savePost = (title, description, author) => {
   addDoc(collection(db, 'Posts'), {
