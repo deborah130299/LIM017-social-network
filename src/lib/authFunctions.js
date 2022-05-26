@@ -14,7 +14,8 @@ export const registerWithEmail = (email, password) => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      console.log(user);
+      sessionStorage.setItem('uid', user.uid);
+     // window.location.href = '/Post';*/
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -27,12 +28,8 @@ export const registerWithEmail = (email, password) => {
 
 export const signInApp = (email, password) => {
   const auth = getAuth();
+  console.log(auth);
 
 return signInWithEmailAndPassword(auth, email, password);
 
 };
-/*
-export  const auth = getAuth();
-export const user = auth.currentUser;
-console.log(user, auth);
-*/

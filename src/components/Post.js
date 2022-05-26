@@ -1,5 +1,5 @@
 //import { auth } from "../lib/authFunctions.js";
-import { onNavigate } from "../main.js";
+import { onNavigate } from '../main.js';
 import {
   savePost,
   onSnapshot,
@@ -12,6 +12,9 @@ import {
 
 // Renderizando el header
 export const Post = () => {
+  let authorEmail = localStorage.getItem('email');
+  console.log(authorEmail);
+
   const PostElement = document.createElement("section");
   PostElement.setAttribute("class", "containerView");
   const containerPost = `
@@ -50,18 +53,27 @@ export const Post = () => {
 
     querySnapshot.forEach((doc) => {
       const task = doc.data();
+
+      // comprobar el usuario de la sesion con el que hizo el post con el operador ternario
+
+      const edit = (authorEmail === task.author) ? `
+      <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
+      <button class='btn-edit' data-id='${doc.id}'>Editar</button>` : '';
+
       html += `
-            <div class='post-public'>
+          <div class='post-public'>
             <h1 id='post-public'>${task.title}</h1>
             <p id='post-public'>${task.description}</p>
-            <p id='post-author'>${task.author}</p>
-                <button class='btn-borrar' data-id='${doc.id}'>Borrar</button>
-                <button class='btn-edit' data-id='${doc.id}'>Editar</button>
-            </div>
+
+            <div id='interaction' class='postinteraction'>
+            ${edit}
+            </div}
+          </div>
             `;
     });
     postContainer.innerHTML = html;
-    const btnsDelete = postContainer.querySelectorAll(".btn-borrar");
+
+    const btnsDelete = postContainer.querySelectorAll('.btn-borrar');
 
     btnsDelete.forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -97,7 +109,7 @@ export const Post = () => {
 
     const title = document.getElementById("post-title");
     const description = document.getElementById("post-text");
-
+    //const author = document.getElementById("post-author");
 
     if (!editStatus) {
       savePost(title.value, description.value);
