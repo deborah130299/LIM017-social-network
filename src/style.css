@@ -35,9 +35,6 @@ body {
     box-sizing: border-box;
     padding: 70px 30px;
     border-radius: 10%;
-<<<<<<< HEAD
-  }
-=======
 }
 
 #fondo-post {
@@ -61,7 +58,6 @@ body {
     top: 20px;
     left: calc(30% - 50px);
 }
->>>>>>> upstream/main
 
 .logo-destinos1{
     width:70%;
@@ -78,16 +74,9 @@ top: 30%;
 } 
 
 button{
-<<<<<<< HEAD
-    justify-content:center;
-    margin-top: 7px;
-    width: 45%;
-    height: 30px;
-=======
     margin-top: 10px;
     height: 37px;
     width: 48%;
->>>>>>> upstream/main
     border-radius: 8px;
     background: none;
     background-color: rgba(100,201,167,255);
@@ -96,8 +85,6 @@ button{
     border-color:  rgba(100,201,167,255);
     }
 
-<<<<<<< HEAD
-=======
 #tittle-login {
     margin-top: 2px;
     font-size: x-large;
@@ -106,7 +93,6 @@ button{
     margin-top: 60px;
     font-size: x-large;
 }
->>>>>>> upstream/main
 p{
     color:rgb(0, 0, 0);
     padding: 5px;
@@ -209,41 +195,10 @@ p{
     margin-inline: -300px;
 }
 #btn-publicar {
-<<<<<<< HEAD
-    margin-top: 11em;
-    width: 3%;
-    height: 30px;
-    border-radius: 8px;
-    background-color: rgba(100,201,167,255);
-    border-color: rgba(100,201,167,255);
-    margin: 2em;
-}
-
-#post-public {
-    position: relative;
-    background: rgba(255,227,179,255);
-    padding: 10px 10px 10px 10px;
-    font-family: helvetica, sans-serif;
-    align-content: center;
-    border-radius:10px;
-    width: 80%;  /* Or whatever */
-    height: 50%;
-    top: 28%;
-    left: 15%;
-}
-.btn-borrar {
-    margin-top: 11em;
-    width: 30px;
-=======
     width: 25%;
->>>>>>> upstream/main
     height: 30px;
     border-radius: 8px;
     background-color: rgba(100,201,167,255);
-<<<<<<< HEAD
-    border-color: rgba(100,201,167,255);
-    margin: 2em;
-=======
     color: white;
     font-size: 12px;
     border-color: rgba(100,201,167,255);
@@ -306,7 +261,6 @@ textarea, #post-public {
     font-size: 12px;
     border-color: rgba(100,201,167,255);
     margin-left: 0%;
->>>>>>> upstream/main
 }
 
 .cerrar-sesion{
