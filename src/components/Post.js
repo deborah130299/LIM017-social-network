@@ -15,13 +15,13 @@ export const Post = () => {
   let authorEmail = localStorage.getItem('email');
   console.log(authorEmail);
 
-  const PostElement = document.createElement("section");
-  PostElement.setAttribute("class", "containerView");
+  const postElement = document.createElement("section");
+  postElement.setAttribute("class", "containerView");
   const containerPost = `
   <header class='navbar'>
     <div id='navbar'>
     <ul>
-      <li><a> <img src='./img/logodenav.png' height='55px' width='180px' /></a></li>
+      <li><a> <img class='img-nav-post' src='./img/logodenav.png' height='55px' width='180px' /></a></li>
       <li><a><button id='buttonnav' class='logout'> <img src='./img/cerrar.png' height ='30' width='40' /></button></a></li>
     </ul>
     </div>
@@ -30,20 +30,22 @@ export const Post = () => {
     <a href='#/artperfil'><img class='imagenUsuario'></a>
     <p class='nombreUsuario'><a id='perfil' href='#/artperfil'></a></p>
   </div>
+  <div class="create-Post">
   <form id='create-Post'>
     <textarea id='post-title' rows='2' cols='50' placeholder='¿Qué quieres compartir?'></textarea>
     <textarea id='post-text' rows='6' cols='50' placeholder='Escribe aquí'></textarea>
     <button id="btn-publicar"><img src='./img/share.png' height ='20' width='30' /></button>
   </form>
+  </div>
   <div id='all-posts'></div>
         `;
-  PostElement.innerHTML = containerPost;
-  PostElement.querySelector(".logout").addEventListener("click", () => {
+  postElement.innerHTML = containerPost;
+  postElement.querySelector(".logout").addEventListener("click", () => {
     onNavigate("/");
   });
   //console.log(auth.currentUser);
-  const createPost = PostElement.querySelector("#create-Post");
-  const postContainer = PostElement.querySelector("#all-posts");
+  const createPost = postElement.querySelector("#create-Post");
+  const postContainer = postElement.querySelector("#all-posts");
 
   let editStatus = false;
   let id = "";
@@ -61,14 +63,14 @@ export const Post = () => {
       <button class='btn-edit' data-id='${doc.id}'>Editar</button>` : '';
 
       html += `
-          <div class='post-public'>
+          <div id='post-Container' class='post-container'>
             <h1 id='post-public'>${task.title}</h1>
             <p id='post-public'>${task.description}</p>
-
-            <div id='interaction' class='postinteraction'>
+            <p id='post-author'>${task.author}</p>
+            </div>
+          <div id='interaction' class='post-interaction'>
             ${edit}
-            </div}
-          </div>
+          </div}
             `;
     });
     postContainer.innerHTML = html;
@@ -109,7 +111,6 @@ export const Post = () => {
 
     const title = document.getElementById("post-title");
     const description = document.getElementById("post-text");
-    //const author = document.getElementById("post-author");
 
     if (!editStatus) {
       savePost(title.value, description.value);
@@ -124,5 +125,5 @@ export const Post = () => {
     createPost.reset();
   });
 
-  return PostElement;
+  return postElement;
 };

@@ -4,13 +4,11 @@ export const Home = () => {
   const HomeElement = document.createElement('section');
   HomeElement.setAttribute('class', 'containerView');
   const HomeDiv =`
-  <div id='fondo'>
-  <img class='logo-destinos0' src='./img/logo-destinos0.png' alt='logo0'/>
-  <img class='logo-destinos1' src='./img/logo-destinos1.png' alt='destinos+'/>
-
+  <div id='fondo-home'>
+  <img class='logo-destinos0-home' src='./img/logo-destinos0.png' alt='logo0'/>
+  <img class='logo-destinos1-home' src='./img/logo-destinos1.png' alt='destinos+'/>
   <form id='welcome" class="welcomeForm'>
-
-  <div class = 'title'>
+  <div class = 'title-home'>
     <p class="title"> ¡Bienvenid@!</p>
   </div>
   <section class='welcome-wrapper'>

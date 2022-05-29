@@ -20,8 +20,21 @@ body {
     background-attachment: fixed;
 }
 #fondo {
-    width: 370px;
-    height: 520px;
+    width: 300px;
+    height: 530px;
+    background: white;
+    color: rgb(0, 0, 0);
+    top: 43%;
+    left: 43%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 5px 10px;
+    border-radius: 10%;
+}
+#fondo-home {
+    width: 320px;
+    height: 610px;
     background: white;
     color: rgb(0, 0, 0);
     top: 50%;
@@ -29,10 +42,22 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 70px 30px;
+    padding: 5px 10px;
     border-radius: 10%;
 }
-
+#fondo-login {
+    width: 320px;
+    height: 610px;
+    background: white;
+    color: rgb(0, 0, 0);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 5px 10px;
+    border-radius: 10%;
+}
 #fondo-post {
     width: 370px;
     height: 520px;
@@ -46,24 +71,19 @@ body {
     padding: 70px 30px;
     border-radius: 10%;
 }
-
-.logo-destinos0{
-    width:65%;
-    height:25%;
+#fondo-register {
+    width: 300px;
+    height: 520px;
+    background: white;
+    color: rgb(0, 0, 0);
+    top: 50%;
+    left: 50%;
     position: absolute;
-    top: 20px;
-    left: calc(30% - 50px);
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 10%;
 }
-
-.logo-destinos1{
-    width:55%;
-    height:50%;
-    position: relative;
-    top: 60px;
-    left: calc(40% - 50px);
-
-}
-
 button{
     margin-top: 10px;
     height: 37px;
@@ -76,14 +96,53 @@ button{
     font-size: 12px;
     border-color:  rgba(100,201,167,255);
     }
-
+.btn-register{
+    margin-top: 8px;
+    height: 37px;
+    width: 50%;
+    border-radius: 8px;
+    padding: 5px 5px 5px 5px;
+    background: none;
+    background-color: rgba(100,201,167,255);
+    color: white;
+    font-size: 12px;
+    border-color:  rgba(100,201,167,255);
+}
 #tittle-login {
-    margin-top: 2px;
+    margin-top: 10px;
     font-size: x-large;
 }
+.logo-destinos0-home{
+    margin-top:10px;
+    width:80%;
+    height:25%;
+    position: absolute;
+    left: calc(27% - 50px);
+}
+.logo-destinos1-home{
+    margin-top:10px;
+    width:75%;
+    height:50%;
+    position: absolute;
+    top: 120px;
+    left: calc(27% - 50px);
+}
+
+.logo-destinos1-login{
+    margin-top:10px;
+    width:65%;
+    height:40%;
+    position: absolute;
+    top: 125px;
+    left: calc(35% - 50px);
+}
+
 .title {
     margin-top: 60px;
     font-size: x-large;
+}
+.title-home {
+    margin-top: 420px;
 }
 p{
     color:rgb(0, 0, 0);
@@ -93,8 +152,18 @@ p{
     font-weight:bolder;
     }
 #post-author{
+    position: relative;
+    background: white;
+    border-color: #88ddb5;
+    padding: 10px 10px 10px 10px;
+    font-family: helvetica, sans-serif;
+    align-content: center;
+    border-radius:10px;
+    width: 318px;  /* Or whatever */
+    height: 50%;
+    margin-top: 1px;
+    left: 1%;
     color:rgb(120,120,120);
-    padding: 5px;
     font-size: small;
     text-align: center;
     font-weight:bolder;
@@ -112,9 +181,9 @@ p{
     align-items:center;
     margin-top: 5px;
     height: 8%;
-    min-width:50%;
+    width: 98%;
     border-radius: 10px;
-    padding: 10px 10px 10px 10px;
+    padding: 2px 2px 2px 2px;
     border: 1px solid #fff;
     outline: none;
     background: #fff;
@@ -122,15 +191,14 @@ p{
 .loginForm{
     position: relative;
     background: rgba(255,227,179,255);
-    padding: 0.5em 0.5em;
+    padding: 5px 5px;
     font-family: helvetica, sans-serif;
     text-align: center;
-    border-radius:10px;
-    width: 85%;
-    height: 50%;
-    top: 13%;
-    left: 7%;
-
+    border-radius: 10px;
+    width: 94%;
+    height: 35%;
+    left: 3%;
+    margin-top: 370px;
 }
 .SingUpBox{
     position: relative;
@@ -143,12 +211,12 @@ p{
 }
 .form-control{
     position: relative;
-    right: 15px;
+    right: 1px;
     padding: 10px 0px 0px 0px;
     font-family: helvetica, sans-serif;
     text-align: center;
     border-radius:10px;
-    min-width:60%;
+    min-width:100%;
     height: 60%;
     border: 1px solid #fff;
     outline: none;
@@ -161,27 +229,30 @@ p{
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     background: rgba(255,227,179,255);
-    padding: 10px 10px;
+    padding: 5px 5px;
     font-family: helvetica, sans-serif;
     border-radius:10px;
-    width: 70%;
-    height: 95%;
-    margin-top: 60px;
-    margin-left: 15%;
+    width: 100%;
+    height: 98%;
+    margin-top: 50px;
+    margin-left: 1%;
 }
+.passwordContainer{
+    margin-top: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
 .create-Post{
     display: flex;
     flex-direction: column;
-    text-align: center;
     background: rgba(255,227,179,255);
-    padding: 0.5em 0.5em;
     font-family: helvetica, sans-serif;
     border-radius:10px;
-    width: 70%;  /* Or whatever */
+    width: 340px;
     height: 40%;
-    margin-top: -20px;
-    margin-left: 15%;
+    margin-left: 5%;
 }
 .welcome-wrapper{
     padding:0.1em;
@@ -189,22 +260,45 @@ p{
 }
 .form-error-none{
     font-size: medium;
-    text-align: start;
-    padding: 10px 10px 10px 10px;
+    text-align: center;
+    padding: 3px 3px 3px 3px;
     }
+#password{
+    margin-top: 10px;
+}
 #create-Post {
     background: white;
     border: 3px solid rgba(100,201,167,255);
-    padding: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;
     font-family: helvetica, sans-serif;
-    align-content: center;
-    justify-content: center;
     border-radius:10px;
     width:340px;
+    margin-top: -20px;
     align-items: center;
-    margin-top: 1em;
-    left: 15px;
-    margin-inline: 220px;
+}
+#post-Container{
+    background: white;
+    border: 3px solid rgba(100,201,167,255);
+    padding: 5px 5px 5px 5px;
+    font-family: helvetica, sans-serif;
+    border-radius:10px;
+    text-align: center;
+    width:100vw;
+    margin-top: 10px;
+    left: 1%;
+    align-items: center;
+}
+#interaction{
+    background: white;
+    border: 3px solid rgba(100,201,167,255);
+    padding: 5px 5px 5px 5px;
+    font-family: helvetica, sans-serif;
+    border-radius:10px;
+    text-align: center;
+    width:100vw;
+    margin-top: 10px;
+    left: 1%;
+    align-items: center;
 }
 #btn-publicar {
     width: 25%;
@@ -225,11 +319,11 @@ textarea, #post-public {
     padding: 10px 10px 10px 10px;
     font-family: helvetica, sans-serif;
     align-content: center;
+    text-align: center;
     border-radius:10px;
     width: 318px;  /* Or whatever */
     height: 50%;
     margin-top: 1px;
-    left: 1%;
 }
 .post-public {
     position: relative;
@@ -248,12 +342,10 @@ textarea, #post-public {
     width: 20%;
     height: 30px;
     border-radius: 8px;
-    background: none;
     background-color: rgba(100,201,167,255);
     color: white;
     font-size: 12px;
     border-color: rgba(100,201,167,255);
-    margin-left: 28%;
 }
 .btn-edit {
     display: inline-block;
@@ -266,7 +358,6 @@ textarea, #post-public {
     color: white;
     font-size: 12px;
     border-color: rgba(100,201,167,255);
-    margin-left: 0%;
 }
 
 .cerrar-sesion{
@@ -291,8 +382,8 @@ header {
 ul {
     list-style: none;
     display: flex;
-    align-items: center;
-    padding: 1em 0px 0px 160px;
+    align-items: flex-start;
+    padding: 5px 0px 0px 0px;
 }
 
 li a {
@@ -320,6 +411,5 @@ li a:hover {
 
 li:first-child {
     margin-right: auto;
-    margin-left: 3em;
+    margin-left: 10px;
 }
-
