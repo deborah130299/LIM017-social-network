@@ -32,7 +32,7 @@ export const Post = () => {
   </div>
   <div class="create-Post">
   <form id='create-Post'>
-    <textarea id='post-title' rows='2' cols='50' placeholder='¿Qué quieres compartir?'></textarea>
+    <textarea id='post-title' rows='4' cols='50' placeholder='¿Qué tema quieres compartir?'></textarea>
     <textarea id='post-text' rows='6' cols='50' placeholder='Escribe aquí'></textarea>
     <button id="btn-publicar"><img src='./img/share.png' height ='20' width='30' /></button>
   </form>
@@ -64,9 +64,9 @@ export const Post = () => {
 
       html += `
           <div id='post-Container' class='post-container'>
-            <h1 id='post-public'>${task.title}</h1>
-            <p id='post-public'>${task.description}</p>
-            <p id='post-author'>${task.author}</p>
+            <h1 id='h1-post-title'>${task.title}</h1>
+            <p id='p-post-text'>${task.description}</p>
+            <p id='p-post-author'>${task.author}</p>
             </div>
           <div id='interaction' class='post-interaction'>
             ${edit}

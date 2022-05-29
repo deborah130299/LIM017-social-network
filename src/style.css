@@ -40,7 +40,7 @@ body {
     top: 50%;
     left: 50%;
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-55%, -50%);
     box-sizing: border-box;
     padding: 5px 10px;
     border-radius: 10%;
@@ -114,6 +114,13 @@ button{
 }
 .logo-destinos0-home{
     margin-top:10px;
+    width:80%;
+    height:25%;
+    position: absolute;
+    left: calc(27% - 50px);
+}
+.logo-destinos0-register{
+    top: 10px;
     width:80%;
     height:25%;
     position: absolute;
@@ -250,9 +257,9 @@ p{
     background: rgba(255,227,179,255);
     font-family: helvetica, sans-serif;
     border-radius:10px;
-    width: 340px;
+    width: 96vw;
     height: 40%;
-    margin-left: 5%;
+
 }
 .welcome-wrapper{
     padding:0.1em;
@@ -272,11 +279,12 @@ p{
     padding: 5px 5px 5px 5px;
     font-family: helvetica, sans-serif;
     border-radius:10px;
-    width:340px;
+    width:100vw;
     margin-top: -20px;
     align-items: center;
 }
 #post-Container{
+    text-align: center;
     background: white;
     border: 3px solid rgba(100,201,167,255);
     padding: 5px 5px 5px 5px;
@@ -289,6 +297,7 @@ p{
     align-items: center;
 }
 #interaction{
+    text-align: center;
     background: white;
     border: 3px solid rgba(100,201,167,255);
     padding: 5px 5px 5px 5px;
@@ -321,9 +330,8 @@ textarea, #post-public {
     align-content: center;
     text-align: center;
     border-radius:10px;
-    width: 318px;  /* Or whatever */
+    width: 97vw;  /* Or whatever */
     height: 50%;
-    margin-top: 1px;
 }
 .post-public {
     position: relative;
