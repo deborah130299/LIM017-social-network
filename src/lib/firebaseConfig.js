@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 // Import the functions you need from the SDKs you need
+import { onNavigate } from '../main.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
-import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
+import { getAuth, signOut } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
 import {
   collection,
   addDoc,
@@ -55,7 +56,15 @@ export const getPost = (id) => getDoc(doc(db, 'Posts', id));
 export const updatePost = (id, newFields) =>
   updateDoc(doc(db, 'Posts', id), newFields);
 
-export {
+export const signOutFunction = () =>
+  {signOut(author).then(() => {
+  onNavigate('/');
+  }).catch((error) => {
+  console.error(error);
+  });
+  }
+
+export{
   collection,
   onSnapshot,
 }
