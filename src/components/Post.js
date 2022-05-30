@@ -1,5 +1,5 @@
 //import { auth } from "../lib/authFunctions.js";
-import { onNavigate } from '../main.js';
+//import { onNavigate } from '../main.js';
 import {
   savePost,
   onSnapshot,
@@ -7,7 +7,8 @@ import {
   db,
   getPost,
   deletePosts,
-  updatePost
+  updatePost,
+  signOutFunction
 } from "../lib/firebaseConfig.js";
 
 // Renderizando el header
@@ -26,14 +27,10 @@ export const Post = () => {
     </ul>
     </div>
   </header>
-  <div class='fondo'>
-    <a href='#/artperfil'><img class='imagenUsuario'></a>
-    <p class='nombreUsuario'><a id='perfil' href='#/artperfil'></a></p>
-  </div>
   <div class="create-Post">
   <form id='create-Post'>
-    <textarea id='post-title' rows='4' cols='50' placeholder='¿Qué tema quieres compartir?'></textarea>
-    <textarea id='post-text' rows='6' cols='50' placeholder='Escribe aquí'></textarea>
+    <textarea id='post-title' rows='4'  placeholder='¿Qué tema quieres compartir?'></textarea>
+    <textarea id='post-text' rows='6' placeholder='Escribe aquí'></textarea>
     <button id="btn-publicar"><img src='./img/share.png' height ='20' width='30' /></button>
   </form>
   </div>
@@ -41,7 +38,7 @@ export const Post = () => {
         `;
   postElement.innerHTML = containerPost;
   postElement.querySelector(".logout").addEventListener("click", () => {
-    onNavigate("/");
+    signOutFunction();
   });
   //console.log(auth.currentUser);
   const createPost = postElement.querySelector("#create-Post");
@@ -70,7 +67,7 @@ export const Post = () => {
             </div>
           <div id='interaction' class='post-interaction'>
             ${edit}
-          </div}
+          </div>
             `;
     });
     postContainer.innerHTML = html;
