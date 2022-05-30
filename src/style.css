@@ -146,22 +146,16 @@ p{
     text-align: center;
     font-weight:bolder;
     }
-#post-author{
+#p-post-author{
     position: relative;
-    background: white;
-    border-color: #88ddb5;
-    padding: 10px 10px 10px 10px;
+    background: #D9F7DC;
+    color: rgb(0, 0, 0);
     font-family: helvetica, sans-serif;
     align-content: center;
     border-radius:10px;
-    width: 318px;  /* Or whatever */
-    height: 50%;
-    margin-top: 1px;
-    left: 1%;
-    color:rgb(120,120,120);
+    width: 95vw;
     font-size: small;
     text-align: center;
-    font-weight:bolder;
 }
 .textWelcome, a{
     color:rgb(0,0,0);
@@ -271,8 +265,7 @@ p{
     align-items: center;
 }
 #post-Container{
-    text-align: center;
-    background: white;
+    background: #D9F7DC;
     border: 3px solid rgba(100,201,167,255);
     padding: 5px 5px 5px 5px;
     font-family: helvetica, sans-serif;
@@ -284,16 +277,11 @@ p{
     align-items: center;
 }
 #interaction{
-    text-align: center;
-    background: white;
-    border: 3px solid rgba(100,201,167,255);
-    padding: 5px 5px 5px 5px;
+    background: #D9F7DC;
     font-family: helvetica, sans-serif;
     border-radius:10px;
     text-align: center;
-    width:100vw;
-    margin-top: 10px;
-    left: 1%;
+    width:95vw;
     align-items: center;
 }
 #btn-publicar {
@@ -317,8 +305,7 @@ textarea, #post-public {
     align-content: center;
     text-align: center;
     border-radius:10px;
-    width: 97vw;  /* Or whatever */
-    height: 50%;
+    width: 96vw;
 }
 .post-public {
     position: relative;

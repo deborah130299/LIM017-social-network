@@ -64,10 +64,11 @@ export const Post = () => {
             <h1 id='h1-post-title'>${task.title}</h1>
             <p id='p-post-text'>${task.description}</p>
             <p id='p-post-author'>${task.author}</p>
-            </div>
-          <div id='interaction' class='post-interaction'>
+            <div id='interaction'>
             ${edit}
-          </div>
+            </div>
+            </div>
+
             `;
     });
     postContainer.innerHTML = html;
