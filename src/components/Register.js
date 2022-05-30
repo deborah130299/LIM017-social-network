@@ -6,19 +6,10 @@ export const Register = () => {
   RegisterElement.setAttribute("class", "containerView");
   const RegisterDiv = `
   <div id="fondo">
-<<<<<<< HEAD
-  <img class="logo-destinos1" src="./img/destinos-logo.png" alt="destinos+"/>
-
-  <form id="signUpForm"  class="signUpForm">
-
-      <p id="registrarse">Registrarse</p>
-      <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="Nombre de usuario"/>
-=======
   <img class="logo-destinos0" src="./img/logo-destinos0.png" alt="logo0"/>
     <form id="signUpForm"  class="signUpForm">
     <p>Registrarse</p>
       <input id="signUpUserName" class="formBox" name="user" type="text" placeholder="Nombre de usuario")$" title="Solo puede contener letras y números." required/>
->>>>>>> upstream/main
       <span id="user" class="form-error-none">Sólo puede contener letras y números.</span>
       <input id="signUpEmail" class="formBox" name="email" type="email" placeholder="correo@example.com" pattern="^\\S+@\\S+\\.\\S+$" title="Ejemplo: correo@example.com" required/>
 
@@ -35,19 +26,9 @@ export const Register = () => {
         <label class="form-error none">Acepto términos y condiciones</label>
       </div>
       <span id="term" class="form-error none"></span>
-<<<<<<< HEAD
-
-      <div class="flexbox">
-      <button id="signUpButton" class="formButton">Registrarte</button>
-      <button id="btnVolver" class="btnVolver">Regresar al Home</button>
-      </div>
-
-      </form>
-=======
       <button id="signUpButton" class="sigUpButton">Registrarte</button>
       <button class="btnVolver">Regresar al Home</button>
     </form>
->>>>>>> upstream/main
     </div>
   `;
 

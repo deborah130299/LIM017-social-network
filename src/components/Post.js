@@ -39,7 +39,9 @@ export const Post = () => {
         `;
   PostElement.innerHTML = containerPost;
   PostElement.querySelector(".logout").addEventListener("click", () => {
-    onNavigate("/");
+    localStorage.clear();
+     onNavigate("/");
+   
   });
   //console.log(auth.currentUser);
   const createPost = PostElement.querySelector("#create-Post");
@@ -61,16 +63,19 @@ export const Post = () => {
       <button class='btn-edit' data-id='${doc.id}'>Editar</button>` : '';
 
       html += `
-          <div class='post-public'>
-            <h1 id='post-public'>${task.title}</h1>
-            <p id='post-public'>${task.description}</p>
-
-            <div id='interaction' class='postinteraction'>
-            ${edit}
-            </div}
+      <section class='post-public'>
+        <div class='post'> 
+          <div> 
+            <h1 id='post-pub'>${task.title}</h1>
+            <p id='post-pub'>${task.description}</p>
           </div>
-            `;
-    });
+          <div id='interaction' class='postinteraction'>
+          ${edit}
+          </div>
+        </div>
+      </section>
+        `;
+});
     postContainer.innerHTML = html;
 
     const btnsDelete = postContainer.querySelectorAll('.btn-borrar');
