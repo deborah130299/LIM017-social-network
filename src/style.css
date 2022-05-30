@@ -3,23 +3,27 @@
     padding: 0;
     margin: 0;
 }
+
 #buttonnav{
     background-color: transparent;
     border: none;
-}
+  }
+
+
 body {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(img/fondo.jpg);
+     background-image: url(img/fondo.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
 }
 
+<<<<<<< HEAD
 #fondo-home {
     width: 320px;
     height: 610px;
@@ -36,6 +40,11 @@ body {
 #fondo-login {
     width: 320px;
     height: 610px;
+=======
+#fondo {
+    width: 370px;
+    height: 520px;
+>>>>>>> parent of e984963 (css)
     background: white;
     color: rgb(0, 0, 0);
     top: 50%;
@@ -72,12 +81,29 @@ body {
     padding: 70px 30px;
     border-radius: 10%;
 }
+<<<<<<< HEAD
+=======
+
+.logo-destinos1{
+    width:70%;
+    height:30%;
+    position: absolute;
+    top: 10px;
+    left: calc(30% - 50px);
+}
+
+/* home */
+ #welcome{
+position: relative;
+top: 30%;
+} 
+
+>>>>>>> parent of e984963 (css)
 button{
     margin-top: 10px;
     height: 37px;
     width: 48%;
     border-radius: 8px;
-    padding: 5px 5px 5px 5px;
     background: none;
     background-color: rgba(100,201,167,255);
     color: white;
@@ -142,7 +168,8 @@ button{
 p{
     color:rgb(0, 0, 0);
     padding: 5px;
-    font-size: medium;
+    margin: 10px;
+    font-size: xx-large;
     text-align: center;
     font-weight:bolder;
     }
@@ -164,8 +191,9 @@ p{
     font-weight:bolder;
     }
 
-.formBox{
+.flexbox{
     display: flex;
+<<<<<<< HEAD
     flex-direction: column;
     align-items:center;
     margin-top: 5px;
@@ -188,34 +216,62 @@ p{
     height: 35%;
     left: 3%;
     margin-top: 370px;
+=======
+    justify-content: center; 
+    column-gap: 10px;
+}
+
+/* Login */
+.loginForm{
+    position: relative;
+    top: 15%;
+   left: 20px;
+    justify-content: space-between;
+
+>>>>>>> parent of e984963 (css)
 }
 .SingUpBox{
     position: relative;
-    background: rgba(255,227,179,255);
+    padding: 10px 10px 10px 10px;
     font-family: helvetica, sans-serif;
     text-align: center;
     border-radius:10px;
-    width: 80%;
-    left: 15%;
+    width: 80%;  /* Or whatever */
+    height: 50%;
+    top: 35%;
+    left: 5%;
 }
 .form-control{
     position: relative;
+<<<<<<< HEAD
     right: 1px;
     padding: 10px 0px 0px 0px;
+=======
+    margin-left: -5%;
+    padding: 5px 5px 5px 5px;
+>>>>>>> parent of e984963 (css)
     font-family: helvetica, sans-serif;
     text-align: center;
     border-radius:10px;
     min-width:100%;
     height: 60%;
-    border: 1px solid #fff;
+    border: 1px solid rgba(255,227,179,255);
     outline: none;
-    background: #fff;
+    background: rgba(255,227,179,255)
 }
-.form-login{
-    padding: 5px 5px 5px 5px;
+#iniciar-sesion #registrarse{
+    font-size: x-large;
+    text-align: center;
+ 
 }
 
+
+.form-login{
+    padding: 5px 5px 5px 5px;
+} 
+/* register */
 .signUpForm{
+<<<<<<< HEAD
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -242,18 +298,34 @@ p{
 }
 
 .create-Post{
+=======
+    position: relative;
+    top: 15%;
+   left: 20px;
+    justify-content: space-between;
+
+
+}  
+ .create-Post{
+>>>>>>> parent of e984963 (css)
     display: flex;
     flex-direction: column;
     background: rgba(255,227,179,255);
     font-family: helvetica, sans-serif;
     border-radius:10px;
+<<<<<<< HEAD
     width: 96vw;
     height: 40%;
 
+=======
+    width: 70%;  
+    height: 40%;
+    margin-top: -20px;
+    margin-left: 15%;
+>>>>>>> parent of e984963 (css)
 }
 .welcome-wrapper{
-    padding:0.1em;
-    margin-top: 10px;
+    padding:0.1em
 }
 .form-error-none{
     font-size: medium;
@@ -264,6 +336,7 @@ p{
     margin-top: 10px;
 }
 #create-Post {
+<<<<<<< HEAD
     background: white;
     border: 3px solid rgba(100,201,167,255);
     padding: 5px 5px 5px 5px;
@@ -291,12 +364,18 @@ p{
     text-align: center;
     width:95vw;
     align-items: center;
+=======
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4em;
+    margin-inline: -300px;
+>>>>>>> parent of e984963 (css)
 }
 #btn-publicar {
     width: 25%;
     height: 30px;
     border-radius: 8px;
-    background: none;
     background-color: rgba(100,201,167,255);
     color: white;
     font-size: 12px;
@@ -315,25 +394,25 @@ textarea, #post-public {
     border-radius:10px;
     width: 96vw;
 }
-.post{
-    display: flex;
-    width: 50%;
-    height: 50%;
-   
-}
 .post-public {
     position: relative;
     background: white;
-    border-color: #88ddb5;
     padding: 10px 10px 10px 10px;
     font-family: helvetica, sans-serif;
     align-content: center;
     border-radius:10px;
+<<<<<<< HEAD
     width: 318px;  /* Or whatever 
     height: 50%;
     margin-top: 1px;
     left: 1%;
 }*/
+=======
+    width: 360px;  /* Or whatever */
+    margin-top: 20px;
+    left: 210px;
+}
+>>>>>>> parent of e984963 (css)
 .btn-borrar {
     display: inline-block;
     text-align: center;
@@ -366,16 +445,16 @@ textarea, #post-public {
     margin-top: -10em;
     margin-inline: 1200px;
 }
+ 
 /* navbar */
 :root {
-    --green: #88ddb5;
-}
-
-#navbar {
+    --pink: #88ddb5;
+  }
+  
+  #navbar {
     width: 100vw;
-}
-header {
     background-color: #fcfcfc;
+<<<<<<< HEAD
 }
 ul {
     list-style: none;
@@ -429,3 +508,47 @@ li:first-child {
     margin-inline: 220px;
     margin-left: 10px;
 }
+=======
+    font-weight: bold;
+  
+  }
+    ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1em 0;
+    }
+  
+    li a {
+      padding-right: 3em;
+      position: relative;
+      transition: all ease-in-out 250ms;
+    }
+
+  
+    li a::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.4em;
+      width: 0%;
+      background-color: var(--pink);
+      bottom: -1em;
+      transition: all ease-in-out 250ms;
+    }
+  
+    li a:hover::after {
+      width: 60%;
+    }
+  
+    li a:hover {
+      color: var(--pink);
+    }
+  
+    li:first-child {
+      margin-right: auto;
+      margin-left: 3em;
+    }
+>>>>>>> parent of e984963 (css)

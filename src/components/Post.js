@@ -36,9 +36,15 @@ export const Post = () => {
   </div>
   <div id='all-posts'></div>
         `;
+<<<<<<< HEAD
   postElement.innerHTML = containerPost;
   postElement.querySelector(".logout").addEventListener("click", () => {
     signOutFunction();
+=======
+  PostElement.innerHTML = containerPost;
+  PostElement.querySelector(".logout").addEventListener("click", () => {
+    onNavigate("/");
+>>>>>>> parent of e984963 (css)
   });
   //console.log(auth.currentUser);
   const createPost = postElement.querySelector("#create-Post");
@@ -60,6 +66,7 @@ export const Post = () => {
       <button class='btn-edit' data-id='${doc.id}'>Editar</button>` : '';
 
       html += `
+<<<<<<< HEAD
           <div id='post-Container' class='post-container'>
           <p id='p-post-author'>${task.author}</p>
             <h1 id='h1-post-title'>${task.title}</h1>
@@ -70,6 +77,16 @@ export const Post = () => {
             </div>
             </div>
 
+=======
+          <div class='post-public'>
+            <h1 id='post-public'>${task.title}</h1>
+            <p id='post-public'>${task.description}</p>
+
+            <div id='interaction' class='postinteraction'>
+            ${edit}
+            </div}
+          </div>
+>>>>>>> parent of e984963 (css)
             `;
     });
     postContainer.innerHTML = html;
